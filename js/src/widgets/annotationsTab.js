@@ -180,17 +180,9 @@
                 this.element.hide();
             }
         },
-        template: $.Handlebars.compile([
-            '<div class="annotationsPanel">',
-            '<ul class="annotationSources">',
-            '{{#each annotationSources}}',
-            '<li class="annotationListItem {{#if this.selected}}selected{{/if}} {{#if this.focused }}focused{{/if}}" data-id="{{this.annotationSource}}">',
-                    '<span>{{this.annotationSource}}</span>',
-            '</li>',
-            '{{/each}}',
-            '</ul>',
-            '</div>',
-        ].join(''))
+        template: function(data) {
+            return Mirador.Handlebars.getTemplate(this.state.getStateProperty('template'), 'widgets/annotationsTab')(data);
+        }
     };
 
 }(Mirador));
