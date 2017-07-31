@@ -112,46 +112,9 @@
             });
         },
 
-        template: $.Handlebars.compile([
-        '{{#if userLogo}}',
-          '<ul class="user-logo {{mainMenuCls}}">',
-            '{{userlogo userLogo}}',
-          '</ul>',
-        '{{/if}}',
-        '<ul class="{{mainMenuCls}}">',
-        '{{#if showBookmark}}',
-          '<li>',
-            '<a href="javascript:;" class="bookmark-workspace mainmenu-button" title="{{t "bookmarkTooltip"}}" aria-label="{{t "bookmarkTooltip"}}">',
-              '<span class="fa fa-bookmark fa-lg fa-fw"></span> {{t "bookmark"}}',
-            '</a>',
-          '</li>',
-        '{{/if}}',
-        /*'{{#if showOptions}}',
-          '<li>',
-            '<a href="javascript:;" class="window-options" title="Window Options">',
-              '<span class=""></span>Options',
-            '</a>',
-          '</li>',
-        '{{/if}}',*/
-        '{{#if showLayout}}',
-          '<li>',
-            '<a href="javascript:;" class="change-layout mainmenu-button" title="{{t "changeLayoutTooltip"}}" aria-label="{{t "changeLayoutTooltip"}}">',
-              '<span class="fa fa-th-large fa-lg fa-fw"></span> {{t "changeLayout"}}',
-            '</a>',
-          '</li>',
-        '{{/if}}',
-        '{{#if showFullScreenViewer}}',
-          '<li>',
-            '<a href="javascript:;" class="fullscreen-viewer mainmenu-button" title="{{t "fullScreenTooltip"}}" aria-label="{{t "fullScreenTooltip"}}">',
-              '<span class="fa fa-expand fa-lg fa-fw"></span> {{t "fullScreen"}}',
-            '</a>',
-          '</li>',
-        '{{/if}}',
-        '</ul>',
-        '{{#if userButtons}}',
-          '{{userbtns userButtons}}',
-        '{{/if}}'
-        ].join(''))
+        template: function (data) {
+            return $.Handlebars.getTemplate(this.state.getStateProperty('template'), 'mainMenu')(data);
+        }
     };
 
     /* Helper methods for processing userButtons provided in configuration */
