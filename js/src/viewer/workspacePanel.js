@@ -110,27 +110,9 @@
       if (stateValue) { _this.show(); return; }
       _this.hide();
     },
-
-    template: $.Handlebars.compile([
-                                 '<div id="workspace-select-menu">',
-                                 '<h1>{{t "changeLayout"}}</h1>',
-                                 '<h3 class="grid-text"></h3>',
-                                 '<h3 class="grid-instructions">{{t "selectGrid"}}</h3>',
-                                 '<div class="select-grid">',
-                                 '{{#each rows}}',
-                                 '<div class="grid-row">',
-                                   '{{#each columns}}',
-                                   '<a class="grid-item" data-gridString="{{gridString}}">',
-                                   '<div class="grid-icon"></div>',
-                                   '</a>',
-                                   '{{/each}}',
-                                 '</div>',
-                                 '{{/each}}',
-                                 '</div>',
-                                 // '<div class="preview-container">',
-                                 // '</div>',
-                                 '</div>'
-    ].join(''))
+    template: function(data) {
+        return Mirador.Handlebars.getTemplate(this.state.getStateProperty('template'), 'workspacePanel')(data);
+    }
   };
 
 }(Mirador));

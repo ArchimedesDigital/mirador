@@ -1,0 +1,19 @@
+<div id="workspace-select-menu">
+    BOOM
+    <h1>{{t "changeLayout"}}</h1>
+    <h3 class="grid-text"></h3>
+    <h3 class="grid-instructions">{{t "selectGrid"}}</h3>
+    <div class="select-grid">
+        {{#each rows}}
+            <div class="grid-row">
+                {{#each columns}}
+                    <a class="grid-item" data-gridString="{{gridString}}">
+                        <div class="grid-icon"></div>
+                    </a>
+                {{/each}}
+            </div>
+        {{/each}}
+    </div>
+    <!--<div class="preview-container">-->
+    <!--</div>-->
+</div>
