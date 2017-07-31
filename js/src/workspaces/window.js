@@ -1005,7 +1005,6 @@
     // template should be based on workspace type
 
       template: function (data) {
-      console.log("window LOG");
         return $.Handlebars.getTemplate(this.state.getStateProperty('template'), 'workspaces/window')(data);
       }
   };
