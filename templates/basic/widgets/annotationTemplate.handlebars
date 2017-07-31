@@ -1,0 +1,40 @@
+{{#if showEdit}}
+    <a class="mirador-osd-pointer-mode hud-control selected" title="{{t "pointerTooltip"}}">
+        <i class="fa fa-mouse-pointer"></i>
+    </a>
+    {{#each tools}}
+        <a class="mirador-osd-{{this.logoClass}}-mode hud-control mirador-osd-edit-mode" title="{{t this.tooltip}}">
+            <i class="material-icons">{{this.logoClass}}</i>
+        </a>
+    {{/each}}
+    {{#if showStrokeStyle}}
+        <a class="hud-control hud-dropdown hud-disabled mirador-line-type" aria-label="{{t "borderTypeTooltip"}}"
+           title="{{t "borderTypeTooltip"}}">
+            <i class="material-icons mirador-border-icon">create</i>
+            <i class="border-type-image solid"></i>
+            <i class="fa fa-caret-down dropdown-icon"></i>
+            <ul class="dropdown type-list">
+                <li><i class="fa solid"></i> {{t "solid"}}</li>
+                <li><i class="fa thick"></i> {{t "thick"}}</li>
+                <li><i class="fa thickest"></i> {{t "thickest"}}</li>
+                <li><i class="fa dashed"></i> {{t "dashed"}}</li>
+                <li><i class="fa dotdashed"></i> {{t "dotDashed"}}</li>
+            </ul>
+        </a>
+    {{/if}}
+    {{#if showStrokeColor}}
+        <a class="hud-control hud-dropdown hud-disabled mirador-osd-color-picker" title="{{t "borderColorTooltip"}}">
+            <input type="text" class="borderColorPicker"/>
+        </a>
+    {{/if}}
+    {{#if showFillColor}}
+        <a class="hud-control hud-dropdown hud-disabled mirador-osd-color-picker" title="{{t "fillColorTooltip"}}">
+            <input type="text" class="fillColorPicker"/>
+        </a>
+    {{/if}}
+    {{#if showRefresh}}
+        <a class="hud-control mirador-osd-refresh-mode">
+            <i class="fa fa-lg fa-refresh"></i>
+        </a>
+    {{/if}}
+{{/if}}
