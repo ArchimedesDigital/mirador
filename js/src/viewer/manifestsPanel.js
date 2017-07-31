@@ -139,33 +139,9 @@
             appendTo: _this.manifestListElement }));
           _this.element.find('#manifest-search').keyup();
         },
-
-        template: $.Handlebars.compile([
-          '<div id="manifest-select-menu">',
-          '<div class="container">',
-            '<div class="manifest-panel-controls">',
-              '<a class="remove-object-option"><i class="fa fa-times fa-lg fa-fw"></i>{{t "close"}}</a>',
-              '<div id="load-controls">',
-                '{{#if showURLBox}}',
-                  '<form action="" id="url-load-form">',
-                    '<label for="url-loader">{{t "addNewObject"}}:</label>',
-                    '<input type="text" id="url-loader" name="url-load" placeholder="http://...">',
-                    '<input type="submit" value="{{t "load"}}">',
-                  '</form>',
-                '{{/if}}',
-                '<form action="" id="manifest-search-form">',
-                  '<label for="manifest-search">{{t "filterObjects"}}:</label>',
-                  '<input id="manifest-search" type="text" name="manifest-filter">',
-                '</form>',
-              '</div>',
-            '</div>',
-              '<div class="select-results">',
-                '<ul class="items-listing">',
-                '</ul>',
-              '</div>',
-          '</div>',
-          '</div>'
-        ].join(''))
+		template: function (data) {
+			return $.Handlebars.getTemplate(this.state.getStateProperty('template'), 'manifestPanel')(data);
+		}
     };
 
 }(Mirador));
