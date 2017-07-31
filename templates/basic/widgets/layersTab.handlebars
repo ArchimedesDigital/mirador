@@ -1,0 +1,37 @@
+<div class="layersPanel {{active}}">
+    <h3>{{imagesFor}} {{canvasTitle}}</h3>
+    {{#if hasLayers}}
+        <ul class="layers-listing">
+            {{#each layers}}
+                <li class="layers-list-item {{loadingStatus}}" data-imageid="{{imageId}}">
+                    <h4>{{this.title}}</h4>
+                    <div class="thumb-container awaiting-thumbnail">
+                        <img class="layer-thumb" src="{{url}}" alt="{{canvasTitle}} title="{{canvasTitle}}">
+                        <span class="spinner"><i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i></span>
+                        <span class="failed"><i class="fa fa-ban fa-3x fa-fw"></i></span>
+                        <span class="thumb-failed"><i class="fa fa-picture-o fa-3x fa-fw"></i></span>
+                    </div>
+                    <form>
+                        <div>
+                            <input class="visibility-toggle" data-imageid="{{imageId}}" type=checkbox
+                                   {{#if visibility}}checked{{/if}}>
+                            <label> {{this.visibleLabel}}</label>
+                        </div>
+                        <label>{{this.opacityLabel}} <span
+                                class="opacity-label {{#unless visibility}}disabled{{/unless}}"
+                                data-imageid="{{imageId}}">
+                            {{#unless visibility}}({{this.dsabledOpacityLabel}}){{else}}({{opacity}})%{{/unless}}
+                        </span></label>
+                        <input class="opacity-slider" data-imageid="{{imageId}}" type="range" min="0" max="100" step="2"
+                               value="{{opacity}}" {{#unless visibility}}disabled{{/unless}}>
+                    </form>
+                </li>
+            {{/each}}
+        </ul>
+    {{else}}
+        <h4>{{emptyTemplateMessage}}</h4>
+    {{/if}}
+    <div class="disabled-overlay">
+        <h3>{{disabledLayersTabMessage}}</h3>
+    </div>
+</div>
