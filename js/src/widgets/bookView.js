@@ -77,12 +77,9 @@
         _this.eventEmitter.publish('SET_BOTTOM_PANEL_VISIBILITY.' + this.windowId, null);
       }
     },
-
-    template: $.Handlebars.compile([
-                                 '<div class="book-view">',
-                                 '</div>'
-    ].join('')),
-
+    template: function(data) {
+        return Mirador.Handlebars.getTemplate(this.state.getStateProperty('template'), 'widgets/bookView')(data);
+    },
     listenForActions: function() {
       var _this = this,
       firstCanvasId = _this.imagesList[0]['@id'],
