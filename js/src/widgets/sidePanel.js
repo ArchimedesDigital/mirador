@@ -205,12 +205,9 @@
       }
     },
 
-    template: $.Handlebars.compile([
-      '<div class="tabContentArea">',
-      '<ul class="tabGroup">',
-      '</ul>',
-      '</div>'
-    ].join('')),
+	template: function (data) {
+      return $.Handlebars.getTemplate(this.state.getStateProperty('template'), 'widgets/sidePanel')(data);
+	},
 
     toggle: function (enableSidePanel) {
       var _this = this;
