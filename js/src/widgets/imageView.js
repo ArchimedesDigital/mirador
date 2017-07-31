@@ -95,11 +95,9 @@
       }
     },
 
-    template: $.Handlebars.compile([
-       '<div class="image-view">',
-       '</div>'
-
-    ].join('')),
+    template: function (data) {
+      return $.Handlebars.getTemplate(this.state.getStateProperty('template'), 'widgets/imageView')(data);
+    },
 
     listenForActions: function() {
       var _this = this;
