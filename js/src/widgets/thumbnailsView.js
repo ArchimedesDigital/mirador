@@ -172,18 +172,9 @@
       }
     },
 
-    template: $.Handlebars.compile([
-                                 '<div class="{{thumbnailCls}}">',
-                                 '<ul class="{{listingCssCls}}" role="list" aria-label="Thumbnails">',
-                                 '{{#thumbs}}',
-                                 '<li class="{{highlight}}" role="listitem" aria-label="Thumbnail">',
-                                 '<img class="thumbnail-image {{highlight}}" title="{{title}}" data-image-id="{{id}}" src="" data="{{thumbUrl}}" height="{{../defaultHeight}}" width="{{width}}">',
-                                 '<div class="thumb-label">{{title}}</div>',
-                                 '</li>',
-                                 '{{/thumbs}}',
-                                 '</ul>',
-                                 '</div>'
-    ].join('')),
+    template: function (data) {
+      return $.Handlebars.getTemplate(this.state.getStateProperty('template'), 'widgets/thumbnailsView')(data);
+    },
 
     hide: function() {
       var element = jQuery(this.element);
