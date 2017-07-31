@@ -75,8 +75,9 @@
         appendTo: this.appendTo,
         tabs : this.panelState.tabs,
         hasStructures : this.hasStructures,
-        eventEmitter: this.eventEmitter
-      });
+        eventEmitter: this.eventEmitter,
+        config: _this.state
+	  });
 
       if (this.tocTabAvailable) {
         new $.TableOfContents({

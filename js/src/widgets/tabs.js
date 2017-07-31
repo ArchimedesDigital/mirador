@@ -98,7 +98,7 @@
 
     },
     template: function (data) {
-      return $.Handlebars.getTemplate(this.state.getStateProperty('template'), 'widgets/tabs')(data);
+      return $.Handlebars.getTemplate(this.config.getStateProperty('template'), 'widgets/tabs')(data);
     },
     toggle: function () {}
   };
