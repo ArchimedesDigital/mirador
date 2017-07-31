@@ -476,15 +476,9 @@ $.SearchWithinResults.prototype = {
    *    var templateData = { template data goes here }
    *    var htmlString = template(templateData);
    */
-  template: $.Handlebars.compile([
-    '<div>',
-      '<div class="search-results-messages"></div>',
-      '<div class="search-results-count"></div>',
-      '<div class="search-results-pager"></div>',
-      '<div class="search-results-container">',
-        '{{> resultsList }}',
-      '</div>',
-    '</div>'
-  ].join(""))};
+  template: function (data) {
+    return $.Handlebars.getTemplate(this.state.getStateProperty('template'), 'widgets/searchWithinResults')(data);
+  }
+};
 
 }(Mirador));
