@@ -63,7 +63,7 @@
     },
 
     template: function (data) {
-      return $.Handlebars.getTemplate(this.state.getStateProperty('template'), 'bookmarkPanel')(data);
+      return $.Handlebars.getTemplate(this.state.getStateProperty('template'), 'viewer/bookmarkPanel')(data);
     }
   };
 

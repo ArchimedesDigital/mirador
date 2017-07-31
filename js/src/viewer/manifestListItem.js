@@ -247,7 +247,7 @@
     },
 
     template: function (data) {
-        return $.Handlebars.getTemplate(this.state.getStateProperty('template'), 'manifestListItem')(data);
+        return $.Handlebars.getTemplate(this.state.getStateProperty('template'), 'viewer/manifestListItem')(data);
     }
   };
 

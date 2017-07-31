@@ -113,7 +113,7 @@
         },
 
         template: function (data) {
-            return $.Handlebars.getTemplate(this.state.getStateProperty('template'), 'mainMenu')(data);
+            return $.Handlebars.getTemplate(this.state.getStateProperty('template'), 'viewer/mainMenu')(data);
         }
     };
 

@@ -140,7 +140,7 @@
           _this.element.find('#manifest-search').keyup();
         },
 		template: function (data) {
-			return $.Handlebars.getTemplate(this.state.getStateProperty('template'), 'manifestPanel')(data);
+			return $.Handlebars.getTemplate(this.state.getStateProperty('template'), 'viewer/manifestPanel')(data);
 		}
     };
 

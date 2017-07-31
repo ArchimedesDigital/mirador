@@ -111,7 +111,7 @@
       _this.hide();
     },
     template: function(data) {
-        return Mirador.Handlebars.getTemplate(this.state.getStateProperty('template'), 'workspacePanel')(data);
+        return Mirador.Handlebars.getTemplate(this.state.getStateProperty('template'), 'viewer/workspacePanel')(data);
     }
   };
 
