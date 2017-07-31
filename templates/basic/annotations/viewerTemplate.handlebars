@@ -1,0 +1,21 @@
+<div class="all-annotations" id="annotation-viewer-{{windowId}}">
+    {{#each annotations}}
+        <div class="annotation-display annotation-tooltip" data-anno-id="{{id}}">
+            <div class="button-container">
+                {{#if showUpdate}}
+                    <a href="#edit" class="edit"><i class="fa fa-pencil-square-o fa-fw"></i>{{t "edit"}}</a>{{/if}}
+                {{#if showDelete}}
+                    <a href="#delete" class="delete"><i class="fa fa-trash-o fa-fw"></i>{{t "delete"}}</a>{{/if}}
+            </div>
+            <div class="text-viewer">
+                {{#if username}}<p class="user">{{username}}:</p>{{/if}}
+                <p>{{{annoText}}}</p>
+            </div>
+            <div id="tags-viewer-{{windowId}}" class="tags-viewer">
+                {{#each tags}}
+                    <span class="tag">{{this}}</span>
+                {{/each}}
+            </div>
+        </div>
+    {{/each}}
+</div>
