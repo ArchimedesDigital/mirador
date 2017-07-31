@@ -17,6 +17,10 @@ Mirador.Handlebars.getTemplate = function (template, name) {
         }
         _this.templates[name] = _this.compile(data);
       },
+      error: function(data) {
+        console.error('Loading template file ' + name + '.handlebars failed');
+        console.error(data.status + ': ' + data.statusText);
+      },
       async: false
     });
   }
