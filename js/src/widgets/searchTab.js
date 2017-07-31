@@ -156,35 +156,9 @@
       }
     },
 
-    template: $.Handlebars.compile([
-      '<div class="search-results">',
-        '{{#if searchService}}',
-          '<label>Select Search Service',
-          '<select id="search-within-selector" style="width: 100%">',
-            '{{#each searchService}}',
-            '<option value="{{ url }}">{{#if label}}{{ label }}{{ else }} {{ url }}{{/if}}</option>',
-            '{{/each}}',
-          '</select>',
-          '</label>',
-          '<form id="search-within-form" class="js-perform-query">',
-            '<input class="js-query" type="text" placeholder="search text"/>',
-
-            '<input style="margin: 10px 0" type="submit"/>',
-
-            '<a class="js-search-expand" style="display: block; margin: 0 0 5px 0">more</a>',
-            '<div class="js-search-expanded" style="display: none;">',
-              '<input class="js-motivation" type="text" placeholder="motivation"/>',
-              '<input class="js-date" type="text" placeholder="date"/>',
-              '<input class="js-user" type="text" placeholder="user"/>',
-              // '<input class="js-box" type="text" placeholder="box: x, y, w, h"/>',
-            '</div>',
-          '</form>',
-          '<div class="search-results-list"></div>',
-        '{{else}}',
-          'No search service available',
-        '{{/if}}',
-      '</div>',
-    ].join(''))
+    template: function (data) {
+      return $.Handlebars.getTemplate(this.state.getStateProperty('template'), 'widgets/searchTab')(data);
+    }
   };
 
 }(Mirador));
