@@ -372,29 +372,12 @@
       });
     },
 
-    emptyTemplate: $.Handlebars.compile([
-      '<ul class="toc">',
-      '<li class="leaf-item open">',
-      '<h2><span>{{t "noIndex"}}</span></h2>',
-      '</ul>',
-    ].join('')),
+    emptyTemplate: function (data) {
+      return $.Handlebars.getTemplate(this.state.getStateProperty('template'), 'widgets/tocEmptyTemplate')(data);
+    },
 
     template: function(tplData) {
-
-      var template = $.Handlebars.compile([
-        '<ul class="toc">',
-        '{{#nestedRangeLevel ranges}}',
-        '<li class="{{#if children}}has-child{{else}}leaf-item{{/if}}">',
-        '{{{tocLevel id label level children}}}',
-        '{{#if children}}',
-        '<ul>',
-        '{{{nestedRangeLevel children}}}',
-        '</ul>',
-        '{{/if}}',
-        '<li>',
-        '{{/nestedRangeLevel}}',
-        '</ul>'
-      ].join(''));
+      var template = $.Handlebars.getTemplate(this.state.getStateProperty('template'), 'widgets/toc');
 
       var previousTemplate;
 

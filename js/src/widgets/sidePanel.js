@@ -86,8 +86,9 @@
           windowId: this.windowId,
           canvasID: this.canvasID,
           manifestVersion: this.manifest.getVersion(),
-          eventEmitter: this.eventEmitter
-        });
+          eventEmitter: this.eventEmitter,
+          state: _this.state
+		});
       }
       if (_this.annotationsTabAvailable) {
         new $.AnnotationsTab({
