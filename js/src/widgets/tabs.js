@@ -97,15 +97,9 @@
       this.element.find(tabClass).addClass('selected');
 
     },
-    template: $.Handlebars.compile([
-      '<ul class="tabGroup">',
-      '{{#each tabs}}',
-      '<li class="tab {{this.options.id}} {{#unless @index}}selected{{/unless}}" data-tabId="{{this.options.id}}">',
-      '{{this.options.label}}',
-      '</li>',
-      '{{/each}}',
-      '</ul>',
-    ].join('')),
+    template: function (data) {
+      return $.Handlebars.getTemplate(this.state.getStateProperty('template'), 'widgets/tabs')(data);
+    },
     toggle: function () {}
   };
 
