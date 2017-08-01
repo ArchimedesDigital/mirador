@@ -1,5 +1,6 @@
 {{#if userLogo}}
 <ul class="user-logo {{mainMenuCls}}">
+
     {{userlogo userLogo}}
 </ul>
 {{/if}}
@@ -20,7 +21,7 @@
     <!--</li>-->
     <!--{{/if}}-->
     <!--{{#if showLayout}}-->
-    <li>
+    <li class="change-layout-dropdown-target">
         <a href="javascript:;" class="change-layout mainmenu-button" title="{{t " changeLayoutTooltip"}}"
         aria-label="{{t "changeLayoutTooltip"}}">
         <span class="fa fa-th-large fa-lg fa-fw"></span> {{t "changeLayout"}}
@@ -31,7 +32,7 @@
     <li>
         <a href="javascript:;" class="fullscreen-viewer mainmenu-button" title="{{t " fullScreenTooltip"}}"
         aria-label="{{t "fullScreenTooltip"}}">
-        <span class="fa fa-expand fa-lg fa-fw"></span> {{t "fullScreen"}}
+        <span class="fa fa-expand fa-lg fa-fw"></span>
         </a>
     </li>
     {{/if}}

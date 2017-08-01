@@ -1,13 +1,15 @@
 .mirador-container {
   .mirador-main-menu-bar {
-    background-color: @black;
+    background-color: @black-a70;
     border-bottom: 1px solid @gray-55;
     color: @white;
-    height: 33px;
+    height: 110px;
     width: 100%;
     /*padding: 4px;*/
     font-size: 14px;
     top: 0;
+    position: fixed;
+    z-index: 100;
 
     .window-options-menu {
       position: relative;
@@ -21,28 +23,31 @@
     float: right;
     list-style: none;
     margin: 0;
-    padding: 8px 12px 0 0;
     text-align: right;
+    height: 100%;
+    line-height: 110px;
 
     li {
+      height: 100%;
       cursor: pointer;
       float: left;
-      padding: 0 15px;
+      border-left: 1px solid @topNavBorder;
+      padding: 0 50px;
+      text-transform: uppercase;
+
     }
 
     a {
       color: @white;
       font-weight: normal;
       text-decoration: none;
-      opacity: 0.6;
 
       &:hover {
-        opacity: 1;
+        opacity: 0.8;
       }
 
       &:active {
-        opacity: 1;
-        border-bottom: 2px solid @deep-sky-blue;
+        opacity: 0.8;
       }
     }
 
