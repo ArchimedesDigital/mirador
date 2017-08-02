@@ -8,12 +8,41 @@
   }
 
   .manifest-info {
-    overflow: auto;
-    background: @white-fa;
+    overflow: hidden;
+    height: 110px;
     position: absolute;
-    top: 110px;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(16,39,51,0.5);
+    border-bottom: 1px solid #53717f;
     .mirador-btn {
       font-size: .8em;
+      line-height: 110px;
+      padding: 0 50px;
+      height: auto;
+      width: auto;
+      margin-top: 0;
+      color: #fff;
+      border-right: 1px solid #53717f;
+    }
+    .manifest-info-item {
+      padding: 0 10px;
+      line-height: 110px;
+      border-right: 1px solid #53717f;
+      color: #fff;
+      height: 110px;
+      display: inline-block;
+    }
+    h3 {
+      margin: 0;
+    }
+    .title-container {
+      display: inline-block;
+    }
+    .mirador-icon-window-menu {
+      border-right: none;
+      border-left: 1px solid #53717f;
     }
   }
 
@@ -23,8 +52,8 @@
     left:0;
     right:0;
     top:0;
-    margin-top:34px;
     box-sizing: border-box;
+    background-color: #000;
   }
 
   .view-container {
@@ -57,6 +86,7 @@
     overflow-y: scroll;
     height: 80%;
     word-wrap: break-word;
+    margin-top: 110px;
   }
 
   .thumbnail-view, .image-view, .book-view, .scroll-view {
