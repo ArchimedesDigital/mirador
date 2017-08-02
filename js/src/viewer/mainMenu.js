@@ -54,8 +54,8 @@
                   text: jQuery(this).attr('title'),
                 },
                 position: {
-                  my: 'top center',
-                  at: 'bottom center'
+                  my: 'bottom right',
+                  at: 'top left'
                 },
                 style: {
                   classes: 'qtip-dark qtip-shadow qtip-rounded'
