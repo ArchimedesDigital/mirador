@@ -24,10 +24,9 @@
     pointer-events: none;
   }*/
   .hud-control {
-    color:white;
-    text-shadow: 0 0 5px @black;
+    color: @white;
     /*transition: all 0.3s ease;*/
-    opacity: 0.6;
+    opacity: 0.8;
     font-size: 18px;
     z-index:2;
   }
@@ -39,7 +38,7 @@
     z-index:2;
   }
   .hud-control.hud-disabled {
-    opacity: 0.3;
+    opacity: 0.9;
   }
   .hud-control:not(.hud-disabled):hover {
     /*transition: all 0.3s ease;*/
@@ -115,12 +114,17 @@
     transform         : translateY(-130px);
     transition: all 0.2s ease-out;
   }
+
   .mirador-pan-zoom-controls {
+    border-radius: 50px;
+    box-shadow: 0px 0px 0px 5px rgba(16,39,51,0.56);
+    background-color: rgba(10,22,31,0.7);
     position: absolute;
-    width: 100px;
-    height: 65px;
-    bottom: 20px;
+    width: 200px;
+    height:  65px;
+    bottom: 70px;
     right: 50%;
+    margin-right: -100px;
   }
   .mirador-pan-zoom-controls.bottom-panel-open {
     -webkit-transform : translateY(-130px);
@@ -130,42 +134,101 @@
     transform         : translateY(-130px);
     transition: all 0.2s ease-out;
   }
+  .move-container {
+    width: 110px;
+    height: 110px;
+    border: solid rgba(255,255,255,0.05) 2px;
+    background-color: rgba(24,56,74,0.75);
+    border-radius: 55px;
+    position: absolute;
+    right: 50%;
+    margin-right: -55px;
+    top: 50%;
+    margin-top: -55px;
+
+  }
+  .move {
+    position: absolute;
+    top: 50%;
+    margin-top: -50px;
+    right: 50%;
+    margin-right: -50px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50px;
+    background-color: rgba(10,22,31,0.5);
+    border: 5px solid rgba(255,255,255,0.05);
+  }
   .mirador-osd-up {
     position:absolute;
-    right:20px;
-    top:0;
+    width: 36px;
+    height: 36px;
+    right:50%;
+    margin-right: -18px;
+    top: -4px;
+    text-align: center;
+    line-height: 36px;
   }
   .mirador-osd-right {
     position:absolute;
     right:0;
-    top:20px;
+    height: 36px;
+    width: 26px;
+    top: 50%;
+    margin-top: -18px;
+    line-height: 36px;
+    text-align: center;
   }
   .mirador-osd-down {
     position:absolute;
-    right:20px;
-    top:40px;
+    height: 36px;
+    width: 36px;
+    margin-right: -18px;
+    text-align: center;
+    right: 50%;
+    bottom: 0;
+    line-height: 36px;
   }
   .mirador-osd-left {
     position:absolute;
-    right:40px;
-    top:20px;
+    height: 36px;
+    width: 26px;
+    left: 0;
+    top: 50%;
+    margin-top: -18px;
+    text-align: center;
+    line-height: 36px;
   }
   .mirador-osd-zoom-in {
-    font-size:130%;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    margin-top: -15px;
+    font-size: 130%;
     position:absolute;
-    right:0px;
-    top:5px;
+    right: 10px;
+    top: 50%;
   }
   .mirador-osd-zoom-out {
+    text-align: center;
     font-size:130%;
+    width: 30px;
+    height: 30px;
+    margin-top: -15px;
     position:absolute;
-    right:70px;
-    top:30px;
+    left: 10px;
+    top: 50%;
   }
   .mirador-osd-go-home {
+    line-height: 36px;
     position: absolute;
-    right:20px;
-    top:20px;
+    text-align: center;
+    height: 36px;
+    width: 36px;
+    margin-right: -18px;
+    margin-top: -18px;
+    right: 50%;
+    top: 50%;
   }
   .mirador-osd-context-controls {
     position: absolute;
