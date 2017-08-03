@@ -1,21 +1,76 @@
 .mirador-container {
   .window {
-    position:relative;
-    width:100%;
-    height:100%;
+    position: relative;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
     background-color: @black-33;
   }
 
   .manifest-info {
-    overflow: hidden;
     height: 110px;
     position: absolute;
     width: 100%;
     top: 0;
     z-index: 100;
-    background-color: rgba(16,39,51,0.5);
+    background-color: rgba(16, 39, 51, 0.5);
     border-bottom: 1px solid #53717f;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    .manifest-info-left-item {
+      display: inline-block;
+      float: left;
+      line-height: 110px;
+      border-right: 1px solid #53717f;
+      text-align: center;
+      color: @white;
+      padding: 0 40px;
+    }
+    .manifest-info-right-item {
+      display: inline-block;
+      float: right;
+      line-height: 110px;
+      border-left: 1px solid #53717f;
+      text-align: center;
+      color: @white;
+      padding: 0 40px;
+      position: absolute;
+      right: 0;
+    }
+    .manifest-info-title {
+      display: inline-block;
+      line-height: 110px;
+      color: @white;
+      padding-left: 30px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      max-width: 50%;
+    }
+    .slot-controls {
+      display: none;
+      position: absolute;
+      line-height: normal;
+      top: 100%;
+      left: 0;
+      .single-control {
+        text-align: left;
+        background-color: rgba(16, 39, 51, 0.5);
+        border: 1px #53717f solid;
+        border-top: none;
+        padding: 10px 20px;
+        width: 220px;
+        color: #a1b1bc;
+        .fa {
+          margin-right: 15px;
+        }
+      }
+      .single-control:hover {
+        color: @white;
+        background-color: rgba(16, 39, 51, 0.8);
+      }
+    }
+
     .mirador-btn {
       font-size: .8em;
       line-height: 110px;
@@ -40,18 +95,14 @@
     .title-container {
       display: inline-block;
     }
-    .mirador-icon-window-menu {
-      border-right: none;
-      border-left: 1px solid #53717f;
-    }
   }
 
   .content-container {
     position: absolute;
-    bottom:0;
-    left:0;
-    right:0;
-    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
     box-sizing: border-box;
     background-color: #000;
   }
@@ -59,8 +110,8 @@
   .view-container {
     margin-left: 280px;
     height: 100%;
-    position:relative;
-    transition:all 0s ease;
+    position: relative;
+    transition: all 0s ease;
 
     &.tranisition {
     }
@@ -116,15 +167,5 @@
 
   .image-list {
     right: 0;
-  }
-
-  .slot-controls {
-    left: 0;
-  }
-
-  .menu-divider {
-    color: @gray-b1;
-    margin: 0px;
-    height: 0px;
   }
 }

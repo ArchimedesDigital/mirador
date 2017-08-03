@@ -1,64 +1,68 @@
 <div class="window">
 
     <div class="manifest-info">
-        <div class="window-manifest-navigation">
-            {{#if userButtons}}
-                {{windowuserbtns userButtons}}
-            {{/if}}
-            {{#if MetadataView}}
-                <a href="javascript:;" class="mirador-btn mirador-icon-metadata-view mirador-tooltip" role="button"
-                   title="{{t "metadataTooltip"}}" aria-label="{{t "metadataTooltip"}}">
-                    <i class="fa fa-info-circle fa-lg fa-fw"></i>
-                </a>
-            {{/if}}
-        </div>
         {{#if layoutOptions.close}}
-            <a href="javascript:;" class="mirador-btn mirador-close-window remove-object-option mirador-tooltip"
-               title="{{t "closeTooltip"}}" aria-label="{{t "closeTooltip"}}"><i
-                    class="fa fa-times fa-lg fa-fw"></i></a>
+            <div class="manifest-info-left-item">
+                <a href="javascript:;" class="mirador-close-window remove-object-option"
+                   title="{{t "closeTooltip"}}" aria-label="{{t "closeTooltip"}}"><i
+                        class="fa fa-times fa-lg fa-fw"></i></a>
+            </div>
         {{/if}}
-
 
         {{#if sidePanel}}
-            <a href="javascript:;" class="mirador-btn mirador-icon-toc mirador-tooltip"
-               title="{{t "sidePanelTooltip"}}" aria-label="{{t "sidePanelTooltip"}}"><i
-                    class="fa fa-bars fa-lg fa-x2 fa-fw"></i></a>
+            <div class="manifest-info-left-item">
+                <a href="javascript:;" class="mirador-icon-toc"
+                   title="{{t "sidePanelTooltip"}}" aria-label="{{t "sidePanelTooltip"}}"><i
+                        class="fa fa-bars fa-lg fa-x2 fa-fw"></i></a>
+
+            </div>
         {{/if}}
-        <!--<div class="title-container">-->
-            <!--<h3 class="window-manifest-title" title="{{{title}}}" aria-label="{{{title}}}">{{{title}}}</h3>-->
-        <!--</div>-->
-        <div class="window-manifest-title" title="{{{title}}}" aria-label="{{{title}}}">
+        {{#if displayLayout}}
+            <div class="manifest-info-left-item manifest-info-dropdown mirador-icon-window-menu">
+                <a href="javascript:;" title="{{t "changeLayoutTooltip"}}"
+                   aria-label="{{t "changeLayoutTooltip"}}">
+                    <i class="fa fa-th-large fa-lg fa-fw"></i>
+                    <i class="fa fa-caret-down"></i>
+                    <div class="slot-controls">
+                        {{#if layoutOptions.newObject}}
+                            <div class="single-control new-object-option">
+                                <i class="fa fa-refresh fa-lg fa-fw"></i> {{t "newObject"}}
+                            </div>
+                        {{/if}}
+                        {{#if layoutOptions.slotRight}}
+                            <div class="single-control add-slot-right">
+                                <i class="fa fa-arrow-circle-right fa-lg fa-fw"></i> {{t "addSlotRight"}}
+                            </div>
+                        {{/if}}
+                        {{#if layoutOptions.slotLeft}}
+                            <div class="single-control add-slot-left">
+                                <i class="fa fa-arrow-circle-left fa-lg fa-fw"></i> {{t "addSlotLeft"}}</div>
+                        {{/if}}
+                        {{#if layoutOptions.slotAbove}}
+                            <div class="single-control add-slot-above">
+                                <i class="fa fa-arrow-circle-up fa-lg fa-fw"></i> {{t "addSlotAbove"}}</div>
+                        {{/if}}
+                        {{#if layoutOptions.slotBelow}}
+                            <div class="single-control add-slot-below">
+                                <i class="fa fa-arrow-circle-down fa-lg fa-fw"></i> {{t "addSlotBelow"}}</div>
+                        {{/if}}
+
+                    </div>
+                </a>
+            </div>
+        {{/if}}
+        <div class="manifest-info-title window-manifest-title" title="{{{title}}}" aria-label="{{{title}}}">
             {{{title}}}
         </div>
-        {{#if displayLayout}}
-            <a href="javascript:;" class="mirador-btn mirador-icon-window-menu pull-right" title="{{t "changeLayoutTooltip"}}"
-               aria-label="{{t "changeLayoutTooltip"}}"><i class="fa fa-th-large fa-lg fa-fw"></i><i
-                    class="fa fa-caret-down"></i>
-                <ul class="dropdown slot-controls">
-                    {{#if layoutOptions.newObject}}
-                        <li class="new-object-option"><i class="fa fa-refresh fa-lg fa-fw"></i> {{t "newObject"}}
-                        </li>
-                        <hr class="menu-divider"/>
-                    {{/if}}
-                    {{#if layoutOptions.slotRight}}
-                        <li class="add-slot-right"><i class="fa fa-arrow-circle-right fa-lg fa-fw"></i> {{t
-                                "addSlotRight"}}</li>
-                    {{/if}}
-                    {{#if layoutOptions.slotLeft}}
-                        <li class="add-slot-left"><i class="fa fa-arrow-circle-left fa-lg fa-fw"></i> {{t
-                                "addSlotLeft"}}</li>
-                    {{/if}}
-                    {{#if layoutOptions.slotAbove}}
-                        <li class="add-slot-above"><i class="fa fa-arrow-circle-up fa-lg fa-fw"></i> {{t
-                                "addSlotAbove"}}</li>
-                    {{/if}}
-                    {{#if layoutOptions.slotBelow}}
-                        <li class="add-slot-below"><i class="fa fa-arrow-circle-down fa-lg fa-fw"></i> {{t
-                                "addSlotBelow"}}</li>
-                    {{/if}}
-                </ul>
+        {{#if MetadataView}}
+        <div class="manifest-info-right-item mirador-icon-metadata-view" title="{{t "metadataTooltip"}}" aria-label="{{t "metadataTooltip"}}">
+            <a href="javascript:;" role="button"
+               title="{{t "metadataTooltip"}}" aria-label="{{t "metadataTooltip"}}">
+                <i class="fa fa-info-circle fa-lg fa-fw"></i>
             </a>
+        </div>
         {{/if}}
+
 
     </div>
     <div class="content-container">
