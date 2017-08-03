@@ -198,9 +198,7 @@
           _this.hud.manipulationState.startup(this);
         }
         if (_this.hud.manipulationState.current === 'manipulationOff') {
-          console.log("_this.hud.annoState.current LOG", _this.hud.annoState.current);
         	if (_this.hud.annoState.current === 'pointer' || _this.annotationState === 'on') {
-        	  console.log("disablind Anno LOG");
 				_this.hud.annoState.displayOff(this);
 				_this.annotationState = 'off';
 			}
