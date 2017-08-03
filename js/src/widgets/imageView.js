@@ -105,12 +105,15 @@
       _this.eventEmitter.subscribe('bottomPanelSet.' + _this.windowId, function(event, visible) {
         var dodgers = _this.element.find('.mirador-osd-toggle-bottom-panel, .mirador-pan-zoom-controls');
         var arrows = _this.element.find('.mirador-osd-next, .mirador-osd-previous');
+        var editor = _this.element.find('.mirador-osd-context-controls');
         if (visible === true) {
           dodgers.addClass('bottom-panel-open');
           arrows.addClass('bottom-panel-open');
+          editor.addClass('bottom-panel-open');
         } else {
           dodgers.removeClass('bottom-panel-open');
           arrows.removeClass('bottom-panel-open');
+          editor.removeClass('bottom-panel-open');
         }
       });
 
@@ -177,8 +180,11 @@
           _this.hud.annoState.startup(this);
         }
         if (_this.hud.annoState.current === 'off') {
-          _this.hud.annoState.displayOn(this);
-          _this.annotationState = 'on';
+          if(_this.hud.manipulationState.current === 'manipulationOn') {
+			  _this.hud.manipulationState.displayOff(this);
+		  }
+			_this.hud.annoState.displayOn(this);
+			_this.annotationState = 'on';
         } else {
           //make sure to force the controls back to auto fade
           _this.forceShowControls = false;
@@ -192,11 +198,29 @@
           _this.hud.manipulationState.startup(this);
         }
         if (_this.hud.manipulationState.current === 'manipulationOff') {
-          _this.hud.manipulationState.displayOn(this);
+          console.log("_this.hud.annoState.current LOG", _this.hud.annoState.current);
+        	if (_this.hud.annoState.current === 'pointer' || _this.annotationState === 'on') {
+        	  console.log("disablind Anno LOG");
+				_this.hud.annoState.displayOff(this);
+				_this.annotationState = 'off';
+			}
+			_this.hud.manipulationState.displayOn(this);
         } else {
           _this.hud.manipulationState.displayOff(this);
         }
       });
+		//
+      // this.element.find('.mirador-tools-toggle').on('click', function() {
+      //   if (_this.hud.manipulationState.current === 'none') {
+      //     _this.hud.manipulationState.startup(this);
+      //   }
+      //   if (_this.hud.manipulationState.current === 'manipulationOff') {
+		// 	_this.hud.annoState.displayOff(this);
+      //     _this.hud.manipulationState.displayOn(this);
+      //   } else {
+		// 	_this.hud.manipulationState.displayOff(this);
+      //   }
+      // });
 
       this.element.find('.mirador-osd-go-home').on('click', function() {
         _this.osd.viewport.goHome();

@@ -236,8 +236,9 @@
   }
   .mirador-osd-context-controls {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    bottom: 70px;
+    right: 50%;
+    margin-right: 120px;
     transition: none;
     /*width: 100%*/
     >div {
@@ -246,15 +247,31 @@
         margin-bottom: 10px;
       }
     }
+    .mirador-osd-annotation-controls {
+      position: absolute;
+      bottom: 120%
+    }
+    .mirador-manipulation-controls {
+      position: absolute;
+      bottom: 120%
+    }
   }
   .mirador-osd-context-controls a {
     float:left;
     margin:0 10px 0 0;
     font-weight: normal;
   }
+  .mirador-osd-context-controls.bottom-panel-open {
+    -webkit-transform : translateY(-130px);
+    -moz-transform    : translateY(-130px);
+    -ms-transform     : translateY(-130px);
+    -o-transform      : translateY(-130px);
+    transform         : translateY(-130px);
+    transition: all 0.2s ease-out;
+  }
   .mirador-annotation-controls {
     position: absolute;
-    top: 0px;
+    bottom: 0px;
     left: 0px;
   }
   .mirador-manipulation-controls {
@@ -366,5 +383,12 @@
     font-size: .8em;
     height: 30px;
     vertical-align: middle;
+  }
+  .mirador-options {
+    background-color: rgba(10, 22, 31, 0.7);
+    padding: 5px;
+    color: @white;
+    margin: 0 10px;
+    display: inline-block;
   }
 }

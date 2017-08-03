@@ -6,18 +6,20 @@
     {{/if}}
     <div class="mirador-osd-context-controls hud-container">
         {{#if showAnno}}
-            <div class="mirador-osd-annotation-controls">
-                <a class="mirador-osd-annotations-layer hud-control" role="button" title="{{t "annotationTooltip"}}"
+            <div class="mirador-osd-annotation-controls"></div>
+            <div class="mirador-options">
+                <a class="mirador-tools-toggle mirador-osd-annotations-layer hud-control" role="button" title="{{t "annotationTooltip"}}"
                    aria-label="{{t "annotationTooltip"}}">
-                    <i class="fa fa-lg fa-comments"></i>
+                    <i class="fa fa-lg fa-comments"></i> Edit
                 </a>
             </div>
         {{/if}}
         {{#if showImageControls}}
-            <div class="mirador-manipulation-controls">
-                <a class="mirador-manipulation-toggle hud-control" role="button"
+            <div class="mirador-manipulation-controls"></div>
+            <div class="mirador-options">
+                <a class="mirador-tools-toggle mirador-manipulation-toggle hud-control" role="button"
                    title="{{t "imageManipulationTooltip"}}" aria-label="{{t "imageManipulationTooltip"}}">
-                    <i class="material-icons">tune</i>
+                    <i class="material-icons"></i> Annotations
                 </a>
             </div>
         {{/if}}
