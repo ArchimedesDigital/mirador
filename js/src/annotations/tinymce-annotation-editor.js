@@ -139,10 +139,12 @@
       });
     },
 
-    editorTemplate: function (data) {
-      console.log("tinymce-annotation-editor LOG");
-      return $.Handlebars.getTemplate(this.state.getStateProperty('template'), 'annotations/tinymce-annotation-editor')(data);
-    }
+	  editorTemplate: $.Handlebars.compile([
+		  '<textarea class="text-editor" placeholder="{{t "comments"}}…">{{#if content}}{{content}}{{/if}}</textarea>',
+		  '<select id="tags-editor-{{windowId}}" class="tags-editor" multiple="true">{{#each tags}}',
+		  '<option value="{{this}}" {{#ifContains ../selectedTags this }}selected="selected"{{/ifContains}}>{{this}}</option>',
+		  '{{/each}}</select>'
+	  ].join(''))
   };
 
   // Handlebars helper: Contains

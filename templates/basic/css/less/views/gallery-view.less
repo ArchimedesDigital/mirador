@@ -62,7 +62,7 @@
     top: -0.5em;
   }
 
-  .hud-control .ui-slider-handle .percent {
+  .edit-control .ui-slider-handle .percent {
     position: absolute;
     left: 17px;
     top:-0.3em;
@@ -71,25 +71,39 @@
     text-shadow: 0 0 3px @black;
   }
 
-  .hud-control .ui-slider, .ui-slider-vertical {
+  .edit-control .ui-slider, .ui-slider-vertical {
     width: 3px;
     margin-left: 27px;
-    margin-bottom: 20px;
     height:100px;
   }
-
-  .hud-control .ui-slider-vertical .ui-slider-handle {
-    width: 0.7em;
-    height: 0.7em;
+  .edit-control .ui-slider, .ui-slider-horizontal {
+    width: 100px;
+    margin-left: 15px;
+    margin-bottom: 5px;
+    height:3px;
+    border-bottom-right-radius: 7px;
+    border-top-right-radius: 7px;
+  }
+  .edit-control .ui-slider-vertical .ui-slider-handle {
+    width: 20px;
+    height: 20px;
     border-radius: 40px;
     margin-bottom: -.35em;
   }
-
-  .hud-control .ui-slider-vertical .ui-slider-handle:focus {
+  .edit-control .ui-slider-horizontal .ui-slider-handle {
+    width: 10px;
+    height: 10px;
+    border-radius: 40px;
+    margin-bottom: -.35em;
+  }
+  .edit-control .ui-slider-vertical .ui-slider-handle:focus {
+    outline:0;
+  }
+  .edit-control .ui-slider-horizontal .ui-slider-handle:focus {
     outline:0;
   }
 
-  .hud-control .ui-slider-range {
+  .edit-control .ui-slider-range {
     background: @deep-sky-blue;
   }
 }

@@ -379,7 +379,7 @@
       });
 
       this.element.find('.mirador-osd-brightness-slider').slider({
-        orientation: "vertical",
+        orientation: "horizontal",
         range: "min",
         min: 0,
         max: 200,
@@ -406,7 +406,7 @@
                                                             });
 
       this.element.find('.mirador-osd-contrast-slider').slider({
-        orientation: "vertical",
+        orientation: "horizontal",
         range: "min",
         min: 0,
         max: 200,
@@ -433,7 +433,7 @@
                                                           });
 
       this.element.find('.mirador-osd-saturation-slider').slider({
-        orientation: "vertical",
+        orientation: "horizontal",
         range: "min",
         min: 0,
         max: 200,
