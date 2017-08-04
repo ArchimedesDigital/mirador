@@ -25,7 +25,6 @@
   }*/
   .edit-control {
     color: @white;
-    /*transition: all 0.3s ease;*/
     opacity: 0.8;
     font-size: 18px;
     z-index: 2;
@@ -46,6 +45,40 @@
     .material-icons {
       vertical-align: middle;
     }
+    .sp-replacer {
+      border: none;
+      color: inherit;
+      background: transparent;
+      padding: 0;
+      overflow: auto;
+      height: auto;
+    }
+    .sp-container {
+      top: 0 !important;
+      left: 50px !important;
+      background-color: rgba(10, 22, 31, 0.7);
+      color: @white;
+      border: none;
+    }
+    .type-list {
+      border: 1px solid #53717f;
+      li {
+        line-height: normal;
+      }
+    }
+  }
+
+  .edit-control:not(.hud-disabled):hover {
+    /*transition: all 0.3s ease;*/
+    cursor: pointer;
+    opacity: 1;
+  }
+  .edit-control.selected {
+    opacity: 1;
+    /*transition: none;*/
+  }
+  .edit-control.hidden {
+    opacity: 0;
   }
   .hud-control {
     color: @white;
@@ -55,7 +88,6 @@
     z-index: 2;
     display: block;
     clear: both;
-
   }
   .hud-container {
     color: white;
@@ -274,7 +306,7 @@
     .mirador-osd-annotation-controls {
       position: absolute;
       bottom: 120%;
-      right: 10%;
+      right: 50%;
     }
     .mirador-manipulation-controls {
       position: absolute;
@@ -337,32 +369,16 @@
   }
 
   .mirador-osd-color-picker .sp-preview {
+    display: none;
     height: 10px;
   }
 
   .mirador-osd-color-picker .sp-replacer {
-    border-color: @gray-cc;
-    height: 11px;
-    border-radius: 3px;
     cursor: default;
   }
 
   .mirador-osd-color-picker .material-icons {
     float: left;
-    font-size: 12px;
-    margin: 0 5px 0 0;
-  }
-
-  .hud-control.mirador-line-type {
-    height: 11px;
-    border-radius: 3px;
-    margin: 2px 11px 0 0;
-    padding: 4px;
-    width: 57px;
-    border: 1px solid @gray-cc;
-    background: @gray-ee none repeat scroll 0 0;
-    text-shadow: none;
-    color: @black-33;
   }
 
   /*.mirador-line-type ul {
