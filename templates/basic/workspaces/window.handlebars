@@ -55,11 +55,33 @@
             {{{title}}}
         </div>
         {{#if MetadataView}}
-        <div class="manifest-info-right-item mirador-icon-metadata-view" title="{{t "metadataTooltip"}}" aria-label="{{t "metadataTooltip"}}">
-            <a href="javascript:;" role="button"
-               title="{{t "metadataTooltip"}}" aria-label="{{t "metadataTooltip"}}">
-                <i class="fa fa-info-circle fa-lg fa-fw"></i>
-            </a>
+        <div class="manifest-info-right-item" title="{{t "metadataTooltip"}}" aria-label="{{t "metadataTooltip"}}">
+            <div class="mirador-icon-metadata-view nav-item">
+                <a href="javascript:;" role="button"
+                   title="{{t "metadataTooltip"}}" aria-label="{{t "metadataTooltip"}}">
+                    <i class="fa fa-info-circle fa-lg fa-fw"></i>
+                </a>
+            </div>
+            <div class="mirador-icon-view-type nav-item">
+                <a href="javascript:;" role="button"
+                   title="{{t "viewTypeTooltip"}}" aria-label="{{t "viewTypeTooltip"}}">
+                    <i class="{{currentFocusClass}}"></i><i class="fa fa-caret-down"></i>
+                    <div class="dropdown image-list">
+                        {{#if ImageView}}
+                            <div class="single-control single-image-option"><i class="{{iconClasses.ImageView}}"></i> {{t "imageView"}}</div>
+                            {{/if}}
+                        {{#if BookView}}
+                            <div class="single-control book-option"><i class="{{iconClasses.BookView}}"></i> {{t "bookView"}}</div>
+                            {{/if}}
+                        {{#if ScrollView}}
+                            <div class="single-control scroll-option"><i class="{{iconClasses.ScrollView}}"></i> {{t "scrollView"}}</div>
+                            {{/if}}
+                        {{#if ThumbnailsView}}
+                            <div class="single-control thumbnails-option"><i class="{{iconClasses.ThumbnailsView}}"></i> {{t "thumbnailsView"}}</div>
+                            {{/if}}
+                    </div>
+                </a>
+            </div>
         </div>
         {{/if}}
 

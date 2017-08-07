@@ -30,12 +30,15 @@
       display: inline-block;
       float: right;
       line-height: 110px;
-      border-left: 1px solid #53717f;
       text-align: center;
       color: @white;
-      padding: 0 40px;
       position: absolute;
       right: 0;
+      .nav-item {
+        border-left: 1px solid #53717f;
+        display: inline-block;
+        padding: 0 40px;
+      }
     }
     .manifest-info-title {
       display: inline-block;
@@ -53,6 +56,26 @@
       line-height: normal;
       top: 100%;
       left: 0;
+      .single-control {
+        text-align: left;
+        background-color: rgba(16, 39, 51, 0.8);
+        border: 1px #53717f solid;
+        border-top: none;
+        padding: 10px 20px;
+        width: 220px;
+        color: @white;
+        .fa {
+          margin-right: 15px;
+        }
+      }
+    }
+
+    .image-list {
+      display: none;
+      position: absolute;
+      line-height: normal;
+      top: 100%;
+      right: 0;
       .single-control {
         text-align: left;
         background-color: rgba(16, 39, 51, 0.8);
