@@ -10,9 +10,10 @@
       element:              null,
       imagesList:           [],
       appendTo:             null,
-      thumbInfo:            {thumbsHeight: 300, listingCssCls: 'listing-thumbs', thumbnailCls: 'thumbnail-view'},
+      thumbInfo:            {thumbsHeight: 150, listingCssCls: 'listing-thumbs', thumbnailCls: 'thumbnail-view'},
       windowId:             null,
       panel:                false,
+      urlInImage:           true,
       lazyLoadingFactor:    1.5  //should be >= 1
     }, options);
     

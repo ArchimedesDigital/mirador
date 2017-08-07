@@ -2,8 +2,8 @@
     <div class="{{listingCssCls}}" role="list" aria-label="Thumbnails">
         {{#thumbs}}
             <div class="{{highlight}}" role="listitem" aria-label="Thumbnail">
-                <img class="thumbnail-image {{highlight}}" title="{{title}}" src=""
-                     data="{{thumbUrl}}">
+                <img class="thumbnail-image {{highlight}} {{imageUrl}}" title="{{title}}" src=""
+                     data="{{thumbUrl}}" data-image-id="{{id}}">
                 <div class="thumb-label" data-image-id="{{id}}">
                     <i class="fa fa-search fa-2x"></i>
                     <span class="imageTitle">{{title}}</span>

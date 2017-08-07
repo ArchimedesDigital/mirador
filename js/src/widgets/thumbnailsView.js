@@ -55,7 +55,8 @@
           title:    $.JsonLd.getTextValue(canvas.label),
           id:       canvas['@id'],
           width:    width,
-          highlight: _this.currentImgIndex === index ? 'highlight list-item' : 'list-item'
+          highlight: _this.currentImgIndex === index ? 'highlight list-item' : 'list-item',
+          imageUrl: _this.urlInImage ? 'thumb-label' : ''
         };
       });
 
@@ -158,7 +159,6 @@
       this.thumbInfo.thumbsHeight = newThumbHeight;
 
       jQuery.each(this.imagesList, function(index, image) {
-        console.log("image LOG", image);
         var aspectRatio = image.height/image.width,
         width = (_this.thumbInfo.thumbsHeight/aspectRatio),
         newThumbURL = $.getThumbnailForCanvas(image, width),
