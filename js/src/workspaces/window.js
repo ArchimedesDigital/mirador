@@ -535,7 +535,7 @@
               canvasID: _this.canvasID,
               canvases: _this.canvases,
               imagesList: _this.imagesList,
-              thumbInfo: {thumbsHeight: 80, listingCssCls: 'panel-listing-thumbs', thumbnailCls: 'panel-thumbnail-view'}
+              thumbInfo: {thumbsHeight: 300, listingCssCls: 'panel-listing-thumbs', thumbnailCls: 'panel-thumbnail-view'}
             });
           }
 

@@ -28,8 +28,9 @@
 
     // Ensure width is an integer...
     width = parseInt(width, 10);
+    var height = canvas.height/canvas.width*width;
 
-    // Respecting the Model...
+		  // Respecting the Model...
     if (canvas.hasOwnProperty('thumbnail')) {
       // use the thumbnail image, prefer via a service
       if (typeof(canvas.thumbnail) == 'string') {
@@ -52,8 +53,16 @@
       } else {
         thumbnailUrl = canvas.thumbnail['@id'];
       }
-    } else {
+    }
+    var sizeRight = $.Iiif.checkThumbnailSize(thumbnailUrl, width, height);
+    console.log("width LOG", width);
+    console.log("height LOG", height);
+	  console.log("sizeRight LOG", sizeRight);
+
+	  if (!sizeRight || !thumbnailUrl) {
       // No thumbnail, use main image
+        console.log("thumbnailUrl LOG", thumbnailUrl);
+        console.log("no thumbnail LOG");
       var resource = canvas.images[0].resource;
       service = resource['default'] ? resource['default'].service : resource.service;
       if (service.hasOwnProperty('@context')) {
@@ -61,6 +70,7 @@
       }
       thumbnailUrl = $.Iiif.makeUriWithWidth(service['@id'], width, version);
     }
+    console.log("thumbnailUrl LOG", thumbnailUrl);
     return thumbnailUrl;
   };
 

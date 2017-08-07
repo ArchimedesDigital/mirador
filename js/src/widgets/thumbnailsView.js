@@ -10,8 +10,8 @@
       element:              null,
       imagesList:           [],
       appendTo:             null,
-      thumbInfo:            {thumbsHeight: 150, listingCssCls: 'listing-thumbs', thumbnailCls: 'thumbnail-view'},
-      defaultThumbHeight:   150,
+      thumbInfo:            {thumbsHeight: 300, listingCssCls: 'listing-thumbs', thumbnailCls: 'thumbnail-view'},
+      defaultThumbHeight:   300,
       windowId:             null,
       panel:                false,
       lazyLoadingFactor:    1.5,  //should be >= 1
@@ -50,7 +50,6 @@
         var aspectRatio = canvas.height/canvas.width,
         width = (_this.thumbInfo.thumbsHeight/aspectRatio),
         thumbnailUrl = $.getThumbnailForCanvas(canvas, width);
-
         return {
           thumbUrl: thumbnailUrl,
           title:    $.JsonLd.getTextValue(canvas.label),
@@ -149,7 +148,8 @@
     loadImage: function(imageElement, url) {
       var _this = this,
       imagePromise = $.createImagePromise(url);
-
+      console.log("imageElement LOG", imageElement);
+      console.log("url LOG", url);
       imagePromise.done(function(image) {
         jQuery(imageElement).attr('src', image);
       });
@@ -160,6 +160,7 @@
       this.thumbInfo.thumbsHeight = newThumbHeight;
 
       jQuery.each(this.imagesList, function(index, image) {
+        console.log("image LOG", image);
         var aspectRatio = image.height/image.width,
         width = (_this.thumbInfo.thumbsHeight/aspectRatio),
         newThumbURL = $.getThumbnailForCanvas(image, width),
