@@ -91,6 +91,9 @@
     },
 
     checkThumbnailSize: function(url, requiredWidth, requiredHeight) {
+        if (!url) {
+            return false;
+        }
         var cutUrlBeginning = url.substring(url.indexOf('full/')+5,url.length);
         var extractWidthAndHeight = cutUrlBeginning.substring(0, cutUrlBeginning.indexOf('/'));
         var imageWidth = extractWidthAndHeight.substring(0,extractWidthAndHeight.indexOf(','));
