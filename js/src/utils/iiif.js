@@ -90,19 +90,23 @@
       return json.image_host;
     },
 
-    checkThumbnailSize: function(url, width, height) {
+    checkThumbnailSize: function(url, requiredWidth, requiredHeight) {
         var cutUrlBeginning = url.substring(url.indexOf('full/')+5,url.length);
         var extractWidthAndHeight = cutUrlBeginning.substring(0, cutUrlBeginning.indexOf('/'));
         var imageWidth = extractWidthAndHeight.substring(0,extractWidthAndHeight.indexOf(','));
         var imageHeight = extractWidthAndHeight.substring(extractWidthAndHeight.indexOf(',')+1, extractWidthAndHeight.length);
+
         var wideEnough = true;
         var highEnough = true;
+
 		if (imageWidth) {
-            wideEnough = imageWidth >= width;
+            wideEnough = imageWidth >= requiredWidth;
         }
-        if(imageHeight) {
-			highEnough = imageHeight >= height;
+
+        if (imageHeight) {
+			highEnough = imageHeight >= requiredHeight;
 		}
+
 		return wideEnough && highEnough;
     }
 
