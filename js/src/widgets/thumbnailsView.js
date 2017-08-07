@@ -148,8 +148,6 @@
     loadImage: function(imageElement, url) {
       var _this = this,
       imagePromise = $.createImagePromise(url);
-      console.log("imageElement LOG", imageElement);
-      console.log("url LOG", url);
       imagePromise.done(function(image) {
         jQuery(imageElement).attr('src', image);
       });
