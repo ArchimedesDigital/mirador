@@ -732,8 +732,10 @@
           eventEmitter: this.eventEmitter,
           windowId: this.id,
           canvasID: this.canvasID,
-          imagesList: this.imagesList
-        });
+          imagesList: this.imagesList,
+		  urlInImage: true,
+		  thumbInfo: {thumbsHeight: 150, listingCssCls: 'listing-gallery-thumbs', thumbnailCls: 'thumbnail-gallery-view'},
+		});
       } else {
         var view = this.focusModules.ThumbnailsView;
         view.updateImage(canvasID);
