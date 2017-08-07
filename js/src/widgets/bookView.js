@@ -55,6 +55,7 @@
         showNextPrev : this.imagesList.length !== 1,
         eventEmitter: this.eventEmitter,
         showAnno: false,
+        state: this.state,
         showImageControls: false
       });
 
