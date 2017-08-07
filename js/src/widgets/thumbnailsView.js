@@ -55,7 +55,7 @@
           title:    $.JsonLd.getTextValue(canvas.label),
           id:       canvas['@id'],
           width:    width,
-          highlight: _this.currentImgIndex === index ? 'highlight' : ''
+          highlight: _this.currentImgIndex === index ? 'highlight list-item' : 'list-item'
         };
       });
 
@@ -121,7 +121,7 @@
 
       //add any other events that would trigger thumbnail display (resize, etc)
 
-      _this.element.find('.thumbnail-image').on('click', function() {
+      _this.element.find('.thumb-label').on('click', function() {
         var canvasID = jQuery(this).attr('data-image-id');
         _this.eventEmitter.publish('SET_CURRENT_CANVAS_ID.' + _this.windowId, canvasID);
       });
@@ -166,7 +166,7 @@
         newThumbURL = $.getThumbnailForCanvas(image, width),
         id = image['@id'];
         var imageElement = _this.element.find('img[data-image-id="'+id+'"]');
-        imageElement.attr('data', newThumbURL).attr('height', _this.thumbInfo.thumbsHeight).attr('width', width).attr('src', '');
+        // imageElement.attr('data', newThumbURL).attr('height', _this.thumbInfo.thumbsHeight).attr('width', width).attr('src', '');
       });
       if (triggerShow) {
         this.show();

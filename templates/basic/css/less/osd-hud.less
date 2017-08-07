@@ -97,7 +97,7 @@
     z-index: 2;
   }
   .hud-control.hud-disabled {
-    opacity: 0.9;
+    opacity: 1;
   }
   .hud-control:not(.hud-disabled):hover {
     /*transition: all 0.3s ease;*/
@@ -172,7 +172,13 @@
     border-top-left-radius: 5px;
     border: solid 1px #102733;
     background-color: #102733;
-    padding: 0 14px;
+    padding: 4px 14px;
+    color: #fff;
+    opacity: 1;
+    font-size: 18px;
+    z-index: 2;
+    display: block;
+    clear: both;
     hr {
       margin: 0 auto;
       margin-bottom: 2px;
@@ -188,11 +194,11 @@
   }
 
   .mirador-osd-toggle-bottom-panel.bottom-panel-open {
-    -webkit-transform: translateY(-130px);
-    -moz-transform: translateY(-130px);
-    -ms-transform: translateY(-130px);
-    -o-transform: translateY(-130px);
-    transform: translateY(-130px);
+    -webkit-transform: translateY(-300px);
+    -moz-transform: translateY(-300px);
+    -ms-transform: translateY(-300px);
+    -o-transform: translateY(-300px);
+    transform: translateY(-300px);
     transition: all 0.2s ease-out;
   }
 
@@ -208,11 +214,11 @@
     margin-right: -100px;
   }
   .mirador-pan-zoom-controls.bottom-panel-open {
-    -webkit-transform: translateY(-130px);
-    -moz-transform: translateY(-130px);
-    -ms-transform: translateY(-130px);
-    -o-transform: translateY(-130px);
-    transform: translateY(-130px);
+    -webkit-transform: translateY(-300px);
+    -moz-transform: translateY(-300px);
+    -ms-transform: translateY(-300px);
+    -o-transform: translateY(-300px);
+    transform: translateY(-300px);
     transition: all 0.2s ease-out;
   }
   .move-container {
@@ -339,11 +345,11 @@
     float: left;
   }
   .mirador-osd-context-controls.bottom-panel-open {
-    -webkit-transform: translateY(-130px);
-    -moz-transform: translateY(-130px);
-    -ms-transform: translateY(-130px);
-    -o-transform: translateY(-130px);
-    transform: translateY(-130px);
+    -webkit-transform: translateY(-300px);
+    -moz-transform: translateY(-300px);
+    -ms-transform: translateY(-300px);
+    -o-transform: translateY(-300px);
+    transform: translateY(-300px);
     transition: all 0.2s ease-out;
   }
   .mirador-annotation-controls {

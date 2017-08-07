@@ -1,11 +1,14 @@
 <div class="{{thumbnailCls}}">
-    <ul class="{{listingCssCls}}" role="list" aria-label="Thumbnails">
+    <div class="{{listingCssCls}}" role="list" aria-label="Thumbnails">
         {{#thumbs}}
-            <li class="{{highlight}}" role="listitem" aria-label="Thumbnail">
-                <img class="thumbnail-image {{highlight}}" title="{{title}}" data-image-id="{{id}}" src=""
-                     data="{{thumbUrl}}" height="{{../defaultHeight}}" width="{{width}}">
-                <div class="thumb-label">{{title}}</div>
-            </li>
+            <div class="{{highlight}}" role="listitem" aria-label="Thumbnail">
+                <img class="thumbnail-image {{highlight}}" title="{{title}}" src=""
+                     data="{{thumbUrl}}">
+                <div class="thumb-label" data-image-id="{{id}}">
+                    <i class="fa fa-search fa-2x"></i>
+                    <span class="imageTitle">{{title}}</span>
+                </div>
+            </div>
         {{/thumbs}}
-    </ul>
+    </div>
 </div>
