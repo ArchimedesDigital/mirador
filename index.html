@@ -76,13 +76,17 @@
            /* { "manifestUri": "http://demos.biblissima-condorcet.fr/iiif/metadata/florus-dispersus/manifest.json", "location": "Biblissima"}*/
            { "manifestUri": "https://media.nga.gov/public/manifests/multispectral_demo.json", "location": "National Gallery of Art"}
          ],
-         "windowObjects": [],
+         "windowObjects": [{
+					 "loadedManifest": "http://www.e-codices.unifr.ch/metadata/iiif/sl-0002/manifest.json",
+					 "bottomPanelVisible": false,
+					 "sidePanelVisible": false,
+				 }],
          "annotationEndpoint": { "name":"Local Storage", "module": "LocalStorageEndpoint" },
          "sidePanelOptions" : {
            "tocTabAvailable": true,
            "layersTabAvailable": true,
            "searchTabAvailable": true
-         }
+         },
        });
      });
     </script>
