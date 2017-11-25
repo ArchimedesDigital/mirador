@@ -55,7 +55,7 @@
 
   .mirador-viewer {
     position: absolute;
-    top: 33px;
+    top: 0px;
     bottom: 0;
     left: 0;
     right: 0;
@@ -70,7 +70,7 @@
 
   .mirador-viewer a.mirador-icon-annotations {
     background: none;
-    color: @gray-91;
+    color: @white;
     box-sizing: border-box;
 
     &:hover {
@@ -98,16 +98,17 @@
     margin:0;
     cursor: pointer;
     box-sizing: border-box;
-    background-color: @gray-dd;
     padding: 10px;
+    background-color: rgba(10, 22, 31, 0.7);
     width:100%;
     text-align:left;
+    opacity: 0.9;
 
     &:hover {
       border-left: 3px solid @deep-sky-blue;
-      background-color: #dddddd;
       padding-left: 7px;
       font-weight: bold;
+      opacity: 1;
     }
   }
 
@@ -115,24 +116,20 @@
   .mirador-viewer a.mirador-icon-metadata-view,
   .mirador-viewer a.mirador-osd-fullscreen  {
     background: none;
-    color: @gray-91;
+    color: @white;
     box-sizing: border-box;
     margin-right:5px;
     padding-bottom:30px;
   }
 
-  .mirador-viewer a.mirador-icon-window-menu,
+  .mirador-viewer
   .mirador-viewer a.mirador-icon-toc,
   .mirador-viewer a.mirador-close-window  {
-    float:left;
     background: none;
-    color: @gray-91;
+    color: @white;
     box-sizing: border-box;
-    margin-left:5px;
-    padding-bottom:30px;
   }
 
-  a.mirador-icon-window-menu,
   a.mirador-icon-view-type {
     width: 30px;
   }
@@ -140,16 +137,16 @@
   .mirador-viewer a.mirador-icon-view-type:hover,
   .mirador-viewer a.mirador-icon-metadata-view:hover,
   .mirador-viewer a.mirador-icon-empty-slot:hover,
-  .mirador-viewer a.mirador-icon-window-menu:hover,
+  .mirador-viewer
   .mirador-viewer a.mirador-icon-toc:hover,
   .mirador-viewer a.mirador-osd-fullscreen:hover {
-    color: @black;
+    color: @white-a90;
   }
 
   .mirador-viewer a.mirador-icon-view-type.selected,
   .mirador-viewer a.mirador-icon-toc.selected,
   .mirador-viewer a.mirador-icon-metadata-view.selected {
-    color: @black;
+    color: @white-a90;
   }
 
   .mirador-viewer a.mirador-icon-copy {

@@ -176,6 +176,8 @@
 
     'imagesPath' : 'images/',
 
+    'template': 'basic',
+
     /**
      *  Annotation backend that have instance-specific configuration data as a hash, e.g.:
      *  {

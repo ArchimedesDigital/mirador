@@ -1,12 +1,15 @@
 .mirador-container {
-  ul.scroll-listing-thumbs {
+  div.scroll-listing-thumbs {
+    margin-top: 120px;
     clear: both;
     list-style: none;
     padding: 0;
     white-space: nowrap;
+    .fa {
+      display: none;
+    }
   }
-
-  ul.scroll-listing-thumbs li {
+  div.scroll-listing-thumbs div {
     box-sizing:border-box;
     margin: 0 0 15px 0;
     padding: 10px 10px 10px 10px;
@@ -14,7 +17,7 @@
     display: inline-block;
   }
 
-  ul.scroll-listing-thumbs li img {
+  div.scroll-listing-thumbs div img {
     background-color: @gray-ee;
     min-height: 25px;
     min-width: 25px;
@@ -22,7 +25,7 @@
     display: block;
   }
 
-  ul.scroll-listing-thumbs li .thumb-label {
+  div.scroll-listing-thumbs div .thumb-label {
     clear: both;
     color: @gray-99;
     font-size: 12px;

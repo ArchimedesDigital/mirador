@@ -31,15 +31,15 @@
 
     getComplianceLevelFromProfile: function(profile) {
         // what to return if we can't determine profile? 0 is not a good idea
-        // would be better to have $.Iiif.supports(profile, feature) but that needs a lot more! 
+        // would be better to have $.Iiif.supports(profile, feature) but that needs a lot more!
         var compliance = -1;
         var complianceString = null;
         if(profile) {
             if(typeof(profile) === 'string'){
-                complianceString = profile;    
+                complianceString = profile;
             } else if (typeof(profile) === 'object'){
                complianceString = profile[0];
-            }   
+            }
             switch(complianceString){
                 case "http://iiif.io/api/image/2/level0.json":
                     compliance = 0;
@@ -54,7 +54,7 @@
         }
         return compliance;
     },
-    
+
     makeUriWithWidth: function(uri, width, version) {
       uri = uri.replace(/\/$/, '');
       if (version[0] == '1') {
@@ -88,6 +88,29 @@
       }
 
       return json.image_host;
+    },
+
+    checkThumbnailSize: function(url, requiredWidth, requiredHeight) {
+        if (!url) {
+            return false;
+        }
+        var cutUrlBeginning = url.substring(url.indexOf('full/')+5,url.length);
+        var extractWidthAndHeight = cutUrlBeginning.substring(0, cutUrlBeginning.indexOf('/'));
+        var imageWidth = extractWidthAndHeight.substring(0,extractWidthAndHeight.indexOf(','));
+        var imageHeight = extractWidthAndHeight.substring(extractWidthAndHeight.indexOf(',')+1, extractWidthAndHeight.length);
+
+        var wideEnough = true;
+        var highEnough = true;
+
+		if (imageWidth) {
+            wideEnough = imageWidth >= requiredWidth;
+        }
+
+        if (imageHeight) {
+			highEnough = imageHeight >= requiredHeight;
+		}
+
+		return wideEnough && highEnough;
     }
 
   };

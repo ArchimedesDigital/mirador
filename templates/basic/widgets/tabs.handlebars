@@ -1,0 +1,7 @@
+<ul class="tabGroup">
+    {{#each tabs}}
+        <li class="tab {{this.options.id}} {{#unless @index}}selected{{/unless}}" data-tabId="{{this.options.id}}">
+            {{this.options.label}}
+        </li>
+    {{/each}}
+</ul>

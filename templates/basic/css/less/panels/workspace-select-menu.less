@@ -1,19 +1,21 @@
 .mirador-container {
   #workspace-select-menu {
     position: absolute;
-    height: 100%;
-    width: 100%;
+    bottom: 100%;
+    right: 5%;
+    border: 1px solid #3a3a3a;
+    width: 300px;
+    height: 300px;
     background-color: @white-a94;
     display: none;
     overflow: hidden;
     z-index: 6;
+    padding: 28px;
   }
 
   #workspace-select-menu {
-    background-color: @black-33;
+    background-color: #0d1b23;
     text-align:center;
-    padding:20%;
-    padding-top:0;
     box-sizing:border-box;
 
     h1 {
@@ -27,8 +29,7 @@
   }
 
   .select-grid {
-    width:60%;
-    min-width:300px;
+    min-width:200px;
     position:relative;
     margin:auto;
   }
@@ -41,16 +42,17 @@
   }
 
   .grid-item {
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     float: left;
     padding: 4px;
     display: block;
 
     .grid-icon {
-      background: @gray;
-      height: 50px;
-      width: 50px;
+      background: #bfbfbf;
+      border: 2px solid #bfbfbf;
+      height: 40px;
+      width: 40px;
       border-radius: 7px;
       display: block;
       transition: all 0.2s ease-out;
@@ -59,9 +61,8 @@
   }
 
   .grid-item.hovered .grid-icon {
-    background: @deep-sky-blue;
+    background: @deep-blue;
     box-shadow: 0 0 10px @black;
-    transform: scale(1.1) translateY(-10px) translateX(-5px);
     transition: all 0.2s ease-out;
   }
 

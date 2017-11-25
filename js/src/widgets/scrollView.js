@@ -14,6 +14,7 @@
       windowId:             null,
       panel:                false,
       vDirectionStatus: '',
+      urlInImage:           true,
       lazyLoadingFactor:    1.5  //should be >= 1
     }, options);
 

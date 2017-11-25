@@ -187,21 +187,9 @@
                 this.element.hide();
             }
         },
-        template: $.Handlebars.compile([
-            '<div class="annotationsPanel">',
-            '<ul class="annotationSources">',
-            '{{#each annotationSources}}',
-            //'<li class="annotationListItem {{#if this.selected}}selected{{/if}} {{#if this.focused }}focused{{/if}}" data-id="{{this.annotationSource.chars}}">',
-            '<li class="annotationListItem" {{#if this.selected}}selected{{/if}} {{#if this.focused }}focused{{/if}}">',
-            '<span style="font-weight: bold">{{{this.annotationSource.label}}}</span>',
-            '<br/>',
-            '<span>{{{this.annotationSource.chars}}}</span>',
-            //'<span>{{this.annotationSource}}</span>',
-            '</li>',
-            '{{/each}}',
-            '</ul>',
-            '</div>',
-        ].join(''))
+        template: function(data) {
+            return Mirador.Handlebars.getTemplate(this.state.getStateProperty('template'), 'widgets/annotationsTab')(data);
+        }
     };
 
 }(Mirador));

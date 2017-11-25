@@ -1,19 +1,22 @@
 .mirador-container {
   .sidePanel {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
     position:absolute;
     width:280px;
     left: 0;
     bottom: 0;
     top:0;
-    background-color: @gray-ef;
-    border-right: 1px solid @light-gray;
+    background-color: #081217;
+    border-right: 1px solid #53717f;
     box-sizing: border-box;
     overflow: hidden;
-    transition: all 0.3s ease;
     padding: 10px;
     opacity:1;
     transition: all 0.2s ease-out;
+    margin-top: 70px;
     transform: translateX(0);
+    font-size: 15px;
 
     .tabGroup {
       list-style-type:none;
@@ -22,30 +25,26 @@
     }
 
     .tab {
-      padding: 8px;
-      margin-right: 2px;
+      padding: 4px 6px;
+      border-left:0;
+      border-bottom: 2px solid #53717f;
       display: inline-block;
       cursor: pointer;
-      background: @gray-dd;
-      border-width: 1px 1px 0 1px;
-      border-color: @gray-b1;
-      border-style: solid;
-      color: @gray-66;
-      font-size: .9em;
+      border-radius: 3px 3px 0 0;
+      color: @white;
     }
 
     .tab:not(.selected):hover {
-      background: @light-gray;
-      color: @black-33;
+      border: 2px solid #53717f;
+      border-bottom: 2px solid #53717f;
+      padding:4px 4px;
     }
 
     .tab.selected {
-      font-weight: bold;
-      color: @black-33;
-      background: @gray-ef;
-      border-top-width: 1px;
-      border-top-style: solid;
-      border-top-color: deepskyblue;
+      border: 2px solid #53717f;
+      border-bottom:0;
+      border-radius: 3px 3px 0 0;
+      margin: 0 -2px;
     }
 
     .annotationListItem {
@@ -65,18 +64,18 @@
     }
 
     .annotationListItem.focused {
-      background-color: @gray-dd;
-      border-left: 3px solid @light-blue;
+      background-color: #081217;
+      border-left: 3px solid #53717f;
     }
 
     .annotationListItem:hover {
-      background-color: @gray-dd;
-      border-left: 3px solid @light-blue;
+      background-color: #081217;
+      border-left: 3px solid #53717f;
     }
 
     .annotationListItem.selected {
-      background-color: @gray-cc;
-      border-left: 3px solid @deep-sky-blue;
+      background-color: #081217;
+      border-left: 3px solid #648391;
     }
 
     a:hover {
@@ -98,10 +97,23 @@
     h1, h2, h3, h4 {
       margin:0;
       padding:0;
-      font-weight: normal;
+      font-weight: 300;
     }
 
     h1:hover, h2:hover, h3:hover, h4:hover {
+    }
+
+    h2 {
+      font-size: 15px;
+    }
+    h3 {
+      font-size: 14px;
+    }
+    h4 {
+      font-size: 13px;
+    }
+    h5 {
+      font-size: 12px;
     }
   }
 
@@ -117,28 +129,31 @@
     width:270px;
     height:100%;
     float: left;
-    background-color: @gray-ef;
-    border-right: 1px solid @light-gray;
+    background-color: #081217;
+    border-right: 1px solid #53717f;
     box-sizing: border-box;
     overflow: hidden;
     transition: all 0.3s ease;
     margin-top: 8px;
   }
 
-  .annotationsPanel {
-    margin: 0;
-    margin-bottom: 10px;
-    padding-bottom: 100px;
-    overflow-y: scroll;
-    width: 280px;
-    padding-right: 10px;
-    position: absolute;
-    box-sizing: border-box;
-    left: 0;
-    top: 0px;
-    bottom: 0;
-    list-style-type: none;
-    font-size: 75%;
+  .annotationsPanel ul {
+    padding:0;
+    margin:0;
+  }
+
+  .search-results {
+    color: @white;
+    padding:0 5px 0 0;
+    margin:0;
+    position:absolute;
+    height: 100%;
+
+    .search-results-container {
+      overflow-y: scroll;
+      position: absolute;
+      height: 70%;
+    }
 
     ul {
       padding:0;
@@ -160,14 +175,14 @@
     margin-bottom: 30px; /* fix overflow-y bug when .tabGroup is present */
 
     a.toc-link {
-      color: black;
+      color: @white;
       padding: 8px;
       padding-left: 8px;
       display: block;
 
       &:hover {
         cursor: pointer;
-        background-color: @gray-dd;
+        background-color: #53717f;
         display:block;
         overflow:hidden;
       }
@@ -196,7 +211,7 @@
       &.selected {
         cursor: pointer;
         overflow:hidden;
-        border-left: 4px solid @deep-sky-blue;
+        border-left: 4px solid #53717f;
         transition: all 0.2s ease-out;
       }
     }
@@ -207,25 +222,28 @@
   }
 
   .toc-link i {
-    color: @black-a40;
+    color: @white;
     margin-right:0.4em;
     transition: all 0.2s linear;
 
     &:hover {
-      color: black;
+      color: #D2D2D2;
     }
   }
 
   .toc-caret {
+    color: #fff;
     padding: 0.4em;
     margin: -0.4em;
   }
 
   .toc li.has-child i.star {
+    color: #fff;
     display: none;
   }
 
   .toc li.leaf-item i.toc-caret {
+    color: #fff;
     display: none
   }
 
@@ -237,7 +255,7 @@
   .toc li.selected>h3 .toc-link,
   .toc li.selected>h4 .toc-link,
   .toc li.selected>h5 .toc-link  {
-    font-weight: bold;
+    font-weight: 400;
   }
 
   .toc li.selected>h2 .toc-link .star,
@@ -248,7 +266,7 @@
   .toc li.hovered>h3 .toc-link .star,
   .toc li.hovered>h4 .toc-link .star,
   .toc li.hovered>h5 .toc-link .star {
-    color:black;
+    color:@white;
   }
 
   .toc li.open>h2 .toc-link .toc-caret,
@@ -269,7 +287,7 @@
   }
 
   .toc li.hovered {
-    border-left: 4px solid @deep-sky-blue;
+    border-left: 4px solid #53717f;
   }
 
   .toc li:hover {
@@ -277,12 +295,12 @@
   }
 
   .toc-link:hover .star {
-    color:black;
+    color:@white;
   }
 
-  // .toc li:hover>h2 a.toc-link, .toc li:hover>h3 a.toc-link, .toc li:hover>h4 a.toc-link, .toc li:hover>h5 a.toc-link, .toc li:hover>h6 a.toc-link {
-  //   font-weight: bold;
-  // }
+  .toc li:hover>h2 a.toc-link, .toc li:hover>h3 a.toc-link, .toc li:hover>h4 a.toc-link, .toc li:hover>h5 a.toc-link, .toc li:hover>h6 a.toc-link {
+    font-weight: 400;
+  }
 
   /*
   .toc li:hover > h2 a {

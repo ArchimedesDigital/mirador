@@ -75,8 +75,9 @@
         appendTo: this.appendTo,
         tabs : this.panelState.tabs,
         hasStructures : this.hasStructures,
-        eventEmitter: this.eventEmitter
-      });
+        eventEmitter: this.eventEmitter,
+        config: _this.state
+	  });
 
       if (this.tocTabAvailable) {
         new $.TableOfContents({
@@ -85,8 +86,9 @@
           windowId: this.windowId,
           canvasID: this.canvasID,
           manifestVersion: this.manifest.getVersion(),
-          eventEmitter: this.eventEmitter
-        });
+          eventEmitter: this.eventEmitter,
+          state: _this.state
+		});
       }
       if (_this.annotationsTabAvailable) {
         new $.AnnotationsTab({
@@ -205,12 +207,9 @@
       }
     },
 
-    template: $.Handlebars.compile([
-      '<div class="tabContentArea">',
-      '<ul class="tabGroup">',
-      '</ul>',
-      '</div>'
-    ].join('')),
+	template: function (data) {
+      return $.Handlebars.getTemplate(this.state.getStateProperty('template'), 'widgets/sidePanel')(data);
+	},
 
     toggle: function (enableSidePanel) {
       var _this = this;

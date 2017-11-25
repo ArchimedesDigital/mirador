@@ -28,8 +28,9 @@
 
     // Ensure width is an integer...
     width = parseInt(width, 10);
+    var height = canvas.height/canvas.width*width;
 
-    // Respecting the Model...
+		  // Respecting the Model...
     if (canvas.hasOwnProperty('thumbnail')) {
       // use the thumbnail image, prefer via a service
       if (typeof(canvas.thumbnail) == 'string') {
@@ -52,7 +53,9 @@
       } else {
         thumbnailUrl = canvas.thumbnail['@id'];
       }
-    } else {
+    }
+    var sizeRight = $.Iiif.checkThumbnailSize(thumbnailUrl, width, height);
+	  if (!sizeRight || !thumbnailUrl) {
       // No thumbnail, use main image
       var resource = canvas.images[0].resource;
       service = resource['default'] ? resource['default'].service : resource.service;

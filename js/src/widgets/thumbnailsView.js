@@ -12,8 +12,8 @@
       imagesListLtr:           [],
       vDirectionStatus:           '',
       appendTo:             null,
-      thumbInfo:            {thumbsHeight: 150, listingCssCls: 'listing-thumbs', thumbnailCls: 'thumbnail-view'},
-      defaultThumbHeight:   150,
+      thumbInfo:            {thumbsHeight: 300, listingCssCls: 'listing-thumbs', thumbnailCls: 'thumbnail-view'},
+      defaultThumbHeight:   300,
       windowId:             null,
       panel:                false,
       lazyLoadingFactor:    1.5,  //should be >= 1
@@ -61,13 +61,13 @@
         var aspectRatio = canvas.height/canvas.width,
         width = (_this.thumbInfo.thumbsHeight/aspectRatio),
         thumbnailUrl = $.getThumbnailForCanvas(canvas, width);
-
         return {
           thumbUrl: thumbnailUrl,
           title:    $.JsonLd.getTextValue(canvas.label),
           id:       canvas['@id'],
           width:    width,
-          highlight: _this.currentImgIndex === index ? 'highlight' : ''
+          highlight: _this.currentImgIndex === index ? 'highlight list-item' : 'list-item',
+          imageUrl: _this.urlInImage ? 'thumb-label' : ''
         };
       });
 
@@ -133,7 +133,7 @@
 
       //add any other events that would trigger thumbnail display (resize, etc)
 
-      _this.element.find('.thumbnail-image').on('click', function() {
+      _this.element.find('.thumb-label').on('click', function() {
         var canvasID = jQuery(this).attr('data-image-id');
         _this.eventEmitter.publish('SET_CURRENT_CANVAS_ID.' + _this.windowId, canvasID);
       });
@@ -160,7 +160,6 @@
     loadImage: function(imageElement, url) {
       var _this = this,
       imagePromise = $.createImagePromise(url);
-
       imagePromise.done(function(image) {
         jQuery(imageElement).attr('src', image);
       });
@@ -176,25 +175,16 @@
         newThumbURL = $.getThumbnailForCanvas(image, width),
         id = image['@id'];
         var imageElement = _this.element.find('img[data-image-id="'+id+'"]');
-        imageElement.attr('data', newThumbURL).attr('height', _this.thumbInfo.thumbsHeight).attr('width', width).attr('src', '');
+        // imageElement.attr('data', newThumbURL).attr('height', _this.thumbInfo.thumbsHeight).attr('width', width).attr('src', '');
       });
       if (triggerShow) {
         this.show();
       }
     },
 
-    template: $.Handlebars.compile([
-                                 '<div class="{{thumbnailCls}}">',
-                                 '<ul class="{{listingCssCls}}" role="list" aria-label="Thumbnails">',
-                                 '{{#thumbs}}',
-                                 '<li class="{{highlight}}" role="listitem" aria-label="Thumbnail">',
-                                 '<img class="thumbnail-image {{highlight}}" title="{{title}}" data-image-id="{{id}}" src="" data="{{thumbUrl}}" height="{{../defaultHeight}}" width="{{width}}">',
-                                 '<div class="thumb-label">{{title}}</div>',
-                                 '</li>',
-                                 '{{/thumbs}}',
-                                 '</ul>',
-                                 '</div>'
-    ].join('')),
+    template: function (data) {
+      return $.Handlebars.getTemplate(this.state.getStateProperty('template'), 'widgets/thumbnailsView')(data);
+    },
 
     hide: function() {
       var element = jQuery(this.element);

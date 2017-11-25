@@ -1,0 +1,70 @@
+<div class="mirador-hud">
+    {{#if showNextPrev}}
+        <a class="mirador-osd-previous hud-control ">
+            <i class="fa fa-2x fa-long-arrow-left "></i>
+        </a>
+    {{/if}}
+    <div class="mirador-osd-context-controls hud-container">
+        {{#if showImageControls}}
+            <div class="mirador-manipulation-controls"></div>
+            <div class="mirador-options">
+                <a class="mirador-tools-toggle mirador-manipulation-toggle hud-control" role="button"
+                   title="{{t "imageManipulationTooltip"}}" aria-label="{{t "imageManipulationTooltip"}}">
+                    <i class="material-icons">wallpaper</i> Edit
+                </a>
+            </div>
+        {{/if}}
+        {{#if showAnno}}
+            <div class="mirador-osd-annotation-controls"></div>
+            <div class="mirador-options">
+                <a class="mirador-tools-toggle mirador-osd-annotations-layer hud-control" role="button" title="{{t "annotationTooltip"}}"
+                   aria-label="{{t "annotationTooltip"}}">
+                    <i class="material-icons">note_add</i> Annotations
+                </a>
+            </div>
+        {{/if}}
+
+    </div>
+    {{#if showNextPrev}}
+        <a class="mirador-osd-next hud-control ">
+            <i class="fa fa-2x fa-long-arrow-right"></i>
+        </a>
+    {{/if}}
+    {{#if showBottomPanel}}
+        <a class="mirador-osd-toggle-bottom-panel hud-control" role="button" aria-label="Toggle Bottom Panel">
+            <hr class="short"/>
+            <hr class="long"/>
+            <hr class="long"/>
+            <hr class="short"/>
+        </a>
+    {{/if}}
+    <div class="mirador-pan-zoom-controls hud-control">
+        <div class="move-container">
+            <div class="move">
+                <a class="mirador-osd-up hud-control" role="button" aria-label="Move image up">
+                    <i class="fa fa-chevron-up fa-2x"></i>
+                </a>
+                <a class="mirador-osd-right hud-control" role="button" aria-label="Move image right">
+                    <i class="fa fa-chevron-right fa-2x"></i>
+                </a>
+                <a class="mirador-osd-go-home hud-control" role="button" aria-label="Reset image bounds">
+                    <i class="fa fa-home"></i>
+                </a>
+                <a class="mirador-osd-down hud-control" role="button" aria-label="Move image down">
+                    <i class="fa fa-chevron-down fa-2x"></i>
+                </a>
+                <a class="mirador-osd-left hud-control" role="button" aria-label="Move image left">
+                    <i class="fa fa-chevron-left fa-2x"></i>
+                </a>
+            </div>
+        </div>
+
+        <a class="mirador-osd-zoom-in hud-control" role="button" aria-label="Zoom in">
+            <i class="fa fa-plus-circle"></i>
+        </a>
+        <a class="mirador-osd-zoom-out hud-control" role="button" aria-label="Zoom out">
+            <i class="fa fa-minus-circle"></i>
+        </a>
+
+    </div>
+</div>

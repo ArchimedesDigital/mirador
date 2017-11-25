@@ -434,39 +434,13 @@
     },
 
     //when this is being used to edit an existing annotation, insert them into the inputs
-    editorTemplate: $.Handlebars.compile([
-      '<form id="annotation-editor-{{windowId}}" class="annotation-editor annotation-tooltip" {{#if id}}data-anno-id="{{id}}"{{/if}}>',
-      '<div>',
-      // need to add a delete, if permissions allow
-      '<div class="button-container">',
-      '<a href="#cancel" class="cancel"><i class="fa fa-times-circle-o fa-fw"></i>{{t "cancel"}}</a>',
-      '<a href="#save" class="save"><i class="fa fa-database fa-fw"></i>{{t "save"}}</a>',
-      '</div>',
-      '</div>',
-      '</form>'
-    ].join('')),
+    editorTemplate: function (data) {
+      return $.Handlebars.getTemplate(this.state.getStateProperty('template'), 'annotations/editorTemplate')(data);
+	},
 
-    viewerTemplate: $.Handlebars.compile([
-      '<div class="all-annotations" id="annotation-viewer-{{windowId}}">',
-      '{{#each annotations}}',
-      '<div class="annotation-display annotation-tooltip" data-anno-id="{{id}}">',
-      '<div class="button-container">',
-        '{{#if showUpdate}}<a href="#edit" class="edit"><i class="fa fa-pencil-square-o fa-fw"></i>{{t "edit"}}</a>{{/if}}',
-        '{{#if showDelete}}<a href="#delete" class="delete"><i class="fa fa-trash-o fa-fw"></i>{{t "delete"}}</a>{{/if}}',
-      '</div>',
-      '<div class="text-viewer">',
-      '{{#if username}}<p class="user">{{username}}:</p>{{/if}}',
-      '<p>{{{annoText}}}</p>',
-      '</div>',
-      '<div id="tags-viewer-{{windowId}}" class="tags-viewer">',
-      '{{#each tags}}',
-      '<span class="tag">{{this}}</span>',
-      '{{/each}}',
-      '</div>',
-      '</div>',
-      '{{/each}}',
-      '</div>'
-    ].join(''))
+    viewerTemplate: function (data) {
+      return $.Handlebars.getTemplate(this.state.getStateProperty('template'), 'annotations/viewerTemplate')(data);
+	}
   };
 
 }(Mirador));

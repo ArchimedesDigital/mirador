@@ -1,0 +1,29 @@
+<div id="{{slotID}}" class="{{workspaceSlotCls}}">
+    <div class="slotIconContainer">
+        <!--<a href="javascript:;" class="mirador-btn mirador-icon-window-menu" title="Replace object"><i class="fa fa-table fa-lg fa-fw"></i>
+     <ul class="dropdown slot-controls">
+     <li class="new-object-option"><i class="fa fa-plus-square fa-lg fa-fw"></i> {{t "newObject"}}</li>
+     <li class="remove-object-option"><i class="fa fa-times fa-lg fa-fw"></i> {{t "close"}}</li>
+     <li class="add-slot-right"><i class="fa fa-caret-square-o-right fa-lg fa-fw"></i> {{t "addSlotRight"}}</li>
+     <li class="add-slot-left"><i class="fa fa-caret-square-o-left fa-lg fa-fw"></i> {{t "addSlotLeft"}}</li>
+    <li class="add-slot-above"><i class="fa fa-caret-square-o-up fa-lg fa-fw"></i> {{t "addSlotAbove"}}</li>
+    <li class="add-slot-below"><i class="fa fa-caret-square-o-down fa-lg fa-fw"></i> {{t "addSlotBelow"}}</li>
+     </ul>
+     </a>
+     accessbility-wise its really bad practice to have h1 tags be used like this
+     most screen reader users get a sense of where they are based on header tags
+     if these are merely h1 tags for aesthetic purposes it might be better to make them specific classes
+     -->
+        <h1 class="plus" role="presentation" aria-label="Add item using Link">
+            <span>+</span>
+            <div class="dropIcon">
+                <i class="fa fa-level-down"></i>
+            </div>
+        </h1>
+        <h1 class="addItemText">{{t "addItem"}}</h1>
+        <h1 class="dropMeMessage">{{t "dropToLoad"}}</h1>
+    </div>
+    <a class="addItemLink" role="button" aria-label="Add item"></a>
+    <a class="remove-slot-option"><i class="fa fa-times fa-lg fa-fw"></i> {{t "close"}}</a>
+    <a class="dropMask"></a>
+</div>

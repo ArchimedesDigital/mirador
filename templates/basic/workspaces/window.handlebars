@@ -1,0 +1,101 @@
+<div class="window">
+
+    <div class="manifest-info">
+        {{#if layoutOptions.close}}
+            <div class="manifest-info-left-item">
+                <a href="javascript:;" class="mirador-close-window remove-object-option"
+                   title="{{t "closeTooltip"}}" aria-label="{{t "closeTooltip"}}"><i
+                        class="fa fa-times fa-lg fa-fw"></i></a>
+            </div>
+        {{/if}}
+
+        {{#if sidePanel}}
+            <div class="manifest-info-left-item">
+                <a href="javascript:;" class="mirador-icon-toc"
+                   title="{{t "sidePanelTooltip"}}" aria-label="{{t "sidePanelTooltip"}}"><i
+                        class="fa fa-bars fa-lg fa-x2 fa-fw"></i></a>
+
+            </div>
+        {{/if}}
+        {{#if displayLayout}}
+            <div class="manifest-info-left-item manifest-info-dropdown mirador-icon-window-menu">
+                <a href="javascript:;" title="{{t "changeLayoutTooltip"}}"
+                   aria-label="{{t "changeLayoutTooltip"}}">
+                    <i class="fa fa-th-large fa-lg fa-fw"></i>
+                    <i class="fa fa-caret-down"></i>
+                    <div class="slot-controls">
+                        {{#if layoutOptions.newObject}}
+                            <div class="single-control new-object-option">
+                                <i class="fa fa-refresh fa-lg fa-fw"></i> {{t "newObject"}}
+                            </div>
+                        {{/if}}
+                        {{#if layoutOptions.slotRight}}
+                            <div class="single-control add-slot-right">
+                                <i class="fa fa-arrow-circle-right fa-lg fa-fw"></i> {{t "addSlotRight"}}
+                            </div>
+                        {{/if}}
+                        {{#if layoutOptions.slotLeft}}
+                            <div class="single-control add-slot-left">
+                                <i class="fa fa-arrow-circle-left fa-lg fa-fw"></i> {{t "addSlotLeft"}}</div>
+                        {{/if}}
+                        {{#if layoutOptions.slotAbove}}
+                            <div class="single-control add-slot-above">
+                                <i class="fa fa-arrow-circle-up fa-lg fa-fw"></i> {{t "addSlotAbove"}}</div>
+                        {{/if}}
+                        {{#if layoutOptions.slotBelow}}
+                            <div class="single-control add-slot-below">
+                                <i class="fa fa-arrow-circle-down fa-lg fa-fw"></i> {{t "addSlotBelow"}}</div>
+                        {{/if}}
+
+                    </div>
+                </a>
+            </div>
+        {{/if}}
+        <div class="manifest-info-title window-manifest-title" title="{{{title}}}" aria-label="{{{title}}}">
+            {{{title}}}
+        </div>
+        {{#if MetadataView}}
+        <div class="manifest-info-right-item" title="{{t "metadataTooltip"}}" aria-label="{{t "metadataTooltip"}}">
+            <div class="mirador-icon-metadata-view nav-item">
+                <a href="javascript:;" role="button"
+                   title="{{t "metadataTooltip"}}" aria-label="{{t "metadataTooltip"}}">
+                    <i class="fa fa-info-circle fa-lg fa-fw"></i>
+                </a>
+            </div>
+            <div class="mirador-icon-view-type nav-item">
+                <a href="javascript:;" role="button"
+                   title="{{t "viewTypeTooltip"}}" aria-label="{{t "viewTypeTooltip"}}">
+                    <i class="{{currentFocusClass}}"></i><i class="fa fa-caret-down"></i>
+                    <div class="dropdown image-list">
+                        {{#if ImageView}}
+                            <div class="single-control single-image-option"><i class="{{iconClasses.ImageView}}"></i> {{t "imageView"}}</div>
+                            {{/if}}
+                        {{#if BookView}}
+                            <div class="single-control book-option"><i class="{{iconClasses.BookView}}"></i> {{t "bookView"}}</div>
+                            {{/if}}
+                        {{#if ScrollView}}
+                            <div class="single-control scroll-option"><i class="{{iconClasses.ScrollView}}"></i> {{t "scrollView"}}</div>
+                            {{/if}}
+                        {{#if ThumbnailsView}}
+                            <div class="single-control thumbnails-option"><i class="{{iconClasses.ThumbnailsView}}"></i> {{t "thumbnailsView"}}</div>
+                            {{/if}}
+                    </div>
+                </a>
+            </div>
+        </div>
+        {{/if}}
+
+
+    </div>
+    <div class="content-container">
+        {{#if sidePanel}}
+            <div class="sidePanel">
+            </div>
+        {{/if}}
+        <div class="overlay"></div>
+        <div class="view-container {{#unless sidePanel}}focus-max-width{{/unless}}">
+            <div class="bottomPanel">
+            </div>
+        </div>
+    </div>
+</div>

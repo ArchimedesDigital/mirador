@@ -1,0 +1,47 @@
+{{#if showRotate}}
+    <a class="edit-control mirador-osd-rotate-right" title="{{t "rotateRightTooltip"}}">
+        <i class="fa fa-lg fa-rotate-right"></i>
+    </a>
+    <a class="edit-control mirador-osd-rotate-left" title="{{t "rotateLeftTooltip"}}">
+        <i class="fa fa-lg fa-rotate-left"></i>
+    </a>
+{{/if}}
+
+{{#if filtersSupported}}
+    {{#if showBrightness}}
+        <a class="edit-control mirador-osd-brightness" title="{{t "brightnessTooltip"}}">
+            <i class="material-icons">wb_sunny</i>
+            <div class="mirador-osd-brightness-slider mirador-slider"/>
+        </a>
+    {{/if}}
+    {{#if showContrast}}
+        <a class="edit-control mirador-osd-contrast" title="{{t "contrastTooltip"}}">
+            <i class="material-icons">brightness_6</i>
+            <div class="mirador-osd-contrast-slider mirador-slider"/>
+        </a>
+    {{/if}}
+    {{#if showSaturate}}
+        <a class="edit-control mirador-osd-saturation" title="{{t "saturationTooltip"}}">
+            <i class="material-icons">gradient</i>
+            <div class="mirador-osd-saturation-slider mirador-slider"/>
+        </a>
+    {{/if}}
+    {{#if showGrayscale}}
+        <a class="edit-control mirador-osd-grayscale" title="{{t "grayscaleTooltip"}}">
+            <i class="material-icons">filter_b_and_w</i>
+        </a>
+    {{/if}}
+    {{#if showInvert}}
+        <a class="edit-control mirador-osd-invert" title="{{t "invertTooltip"}}">
+            <i class="material-icons">invert_colors</i>
+        </a>
+    {{/if}}
+    {{#if showMirror}}
+        <a class="edit-control mirador-osd-mirror" title="{{t "mirrorTooltip"}}">
+            <i class="material-icons">swap_horiz</i>
+        </a>
+    {{/if}}
+    <a class="edit-control mirador-osd-reset" title="{{t "resetTooltip"}}">
+        <i class="fa fa-lg fa-refresh"></i>
+    </a>
+{{/if}}

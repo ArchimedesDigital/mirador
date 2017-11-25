@@ -111,7 +111,7 @@ module.exports = function(grunt) {
     less: {
       compile: {
         files: {
-          'css/mirador.css': 'css/less/main.less'
+          'css/mirador.css': 'templates/*/css/less/main.less',
         }
       }
     },
@@ -139,7 +139,7 @@ module.exports = function(grunt) {
       main: {
         files: [{
           expand: true,
-          src: 'css/images/**',
+          src: 'templates/*/css/images/**',
           dest: 'build/mirador/'
         }, {
           expand: true,
@@ -204,8 +204,7 @@ module.exports = function(grunt) {
           'js/src/*/*.js',
           'locales/*/*.json',
           'images/*',
-          'css/*.css',
-          'css/less/**/*.less',
+          'templates/**/*',
           'index.html'
         ],
         tasks: 'dev_build'

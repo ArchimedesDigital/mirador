@@ -62,15 +62,9 @@
       jQuery(this.element).show({effect: "slide", direction: "up", duration: 300, easing: "swing"});
     },
 
-    template: $.Handlebars.compile([
-       '<div id="bookmark-panel">',
-         '<h3>{{t "bookmarkTitle"}}</h3>',
-         '<span>',
-         '{{t "url"}}: <input id="share-url" type="text"></input>',
-         '<a href="javascript:;" class="mirador-btn mirador-icon-copy" data-clipboard-target="share-url"><i class="fa fa-files-o fa-lg"></i></a>',
-         '</span>',
-       '</div>'
-    ].join(''))
+    template: function (data) {
+      return $.Handlebars.getTemplate(this.state.getStateProperty('template'), 'viewer/bookmarkPanel')(data);
+    }
   };
 
 }(Mirador));

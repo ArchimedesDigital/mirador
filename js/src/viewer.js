@@ -124,7 +124,7 @@
       });
 
       this.workspacePanel = new $.WorkspacePanel({
-        appendTo: this.element.find('.mirador-viewer'),
+        appendTo: this.element.find('.change-layout-dropdown-target'),
         state: this.state,
         eventEmitter: this.eventEmitter
       });

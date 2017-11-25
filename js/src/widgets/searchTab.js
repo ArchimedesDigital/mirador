@@ -156,34 +156,9 @@
       }
     },
 
-    template: $.Handlebars.compile([
-      '<div class="search-results">',
-        '{{#if searchService}}',
-        '<label for="search-within-selector">{{t "searchLabelSelect"}}</label>',
-          '<select id="search-within-selector" style="width: 100%">',
-            '{{#each searchService}}',
-            '<option value="{{ url }}">{{#if label}}{{ label }}{{ else }} {{ url }}{{/if}}</option>',
-            '{{/each}}',
-          '</select>',
-          '<form id="search-within-form" class="js-perform-query">',
-            '<input class="js-query" type="text" placeholder="{{t "searchText"}}"/>',
-
-            '<input style="margin: 10px 0" type="submit" value="{{t "submit"}}"/>',
-
-            '<div style="margin-bottom: 5px"><a class="js-search-expand" href="#">{{t "more"}}</a></div>',
-            '<div class="js-search-expanded" style="display: none;">',
-              '<input class="js-motivation" type="text" placeholder="motivation"/>',
-              '<input class="js-date" type="text" placeholder="date"/>',
-              '<input class="js-user" type="text" placeholder="user"/>',
-              // '<input class="js-box" type="text" placeholder="box: x, y, w, h"/>',
-            '</div>',
-          '</form>',
-          '<div class="search-results-list"></div>',
-        '{{else}}',
-          '{{t "searchNotAvailable"}}',
-        '{{/if}}',
-      '</div>',
-    ].join(''))
+    template: function (data) {
+      return $.Handlebars.getTemplate(this.state.getStateProperty('template'), 'widgets/searchTab')(data);
+    }
   };
 
 }(Mirador));
