@@ -551,8 +551,8 @@
               imagesList: _this.imagesList,
               imagesListLtr: _this.imagesListLtr,
               imagesListRtl: _this.imagesListRtl,
-              vDirectionStatus: _this.vDirectionStatus,		
-              thumbInfo: {thumbsHeight: 80, listingCssCls: 'panel-listing-thumbs', thumbnailCls: 'panel-thumbnail-view'}
+              vDirectionStatus: _this.vDirectionStatus,
+              thumbInfo: {thumbsHeight: 280, listingCssCls: 'panel-listing-thumbs', thumbnailCls: 'panel-thumbnail-view'}
             });
           }
 
