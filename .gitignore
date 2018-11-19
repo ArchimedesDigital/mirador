@@ -13,5 +13,6 @@ data/ecodices
 data/BnF
 data/Harvard
 build/
+dist/
 .idea/
 bower_components/
