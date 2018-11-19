@@ -61,7 +61,7 @@
       border: none;
     }
     .type-list {
-      border: 1px solid #53717f;
+      border: 1px solid #aaa;
       li {
         line-height: normal;
       }
@@ -131,7 +131,7 @@
     -o-transform: translateY(0px);
     transform: translateY(0px);
     transition: all 0.2s ease-out;
-    background-color: #102733;
+    background-color: #333;
     padding: 10px
   }
   .mirador-osd-previous.bottom-panel-open {
@@ -153,7 +153,7 @@
     -o-transform: translateY(0px);
     transform: translateY(0px);
     transition: all 0.2s ease-out;
-    background-color: #102733;
+    background-color: #333;
     padding: 10px
   }
   .mirador-osd-next.bottom-panel-open {
@@ -178,8 +178,8 @@
     transition: all 0.2s ease-out;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
-    border: solid 1px #102733;
-    background-color: #102733;
+    border: solid 1px #333;
+    background-color: #333;
     padding: 4px 14px;
     color: #fff;
     opacity: 1;
@@ -190,7 +190,7 @@
     hr {
       margin: 0 auto;
       margin-bottom: 2px;
-      border-color: #65abaa;
+      border-color: #eee;
     }
     hr.short {
       width: 80%;
@@ -202,12 +202,12 @@
   }
 
   .mirador-osd-toggle-bottom-panel.bottom-panel-open {
-    -webkit-transform: translateY(-300px);
-    -moz-transform: translateY(-300px);
-    -ms-transform: translateY(-300px);
-    -o-transform: translateY(-300px);
-    transform: translateY(-300px);
-    transition: all 0.2s ease-out;
+    -webkit-transform: translateY(-160px);
+    -moz-transform: translateY(-160px);
+    -ms-transform: translateY(-160px);
+    -o-transform: translateY(-160px);
+    transform: translateY(-160px);
+    transition: all 0.2s linear;
   }
 
   .mirador-pan-zoom-controls {
@@ -220,14 +220,17 @@
     bottom: 70px;
     right: 50%;
     margin-right: -100px;
+		display: none;
+		visibility: hidden;
+		opacity: 0;
   }
   .mirador-pan-zoom-controls.bottom-panel-open {
-    -webkit-transform: translateY(-300px);
-    -moz-transform: translateY(-300px);
-    -ms-transform: translateY(-300px);
-    -o-transform: translateY(-300px);
-    transform: translateY(-300px);
-    transition: all 0.2s ease-out;
+    -webkit-transform: translateY(-160px);
+    -moz-transform: translateY(-160px);
+    -ms-transform: translateY(-160px);
+    -o-transform: translateY(-160px);
+    transform: translateY(-160px);
+    transition: all 0.2s linear;
   }
   .move-container {
     width: 110px;
@@ -353,11 +356,11 @@
     float: left;
   }
   .mirador-osd-context-controls.bottom-panel-open {
-    -webkit-transform: translateY(-300px);
-    -moz-transform: translateY(-300px);
-    -ms-transform: translateY(-300px);
-    -o-transform: translateY(-300px);
-    transform: translateY(-300px);
+    -webkit-transform: translateY(-160px);
+    -moz-transform: translateY(-160px);
+    -ms-transform: translateY(-160px);
+    -o-transform: translateY(-160px);
+    transform: translateY(-160px);
     transition: all 0.2s ease-out;
   }
   .mirador-annotation-controls {
